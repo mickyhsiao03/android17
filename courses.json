@@ -7,7 +7,8 @@
         "presentations": 10,
         "participation": 15,
         "midterm": 15,
-        "final": 25
+        "final": 25,
+        "credit": 4
     },
     {
         "course_name": "ACIT 1515",
@@ -17,7 +18,8 @@
         "presentations": 0,
         "participation": 10,
         "midterm": 25,
-        "final": 25
+        "final": 25,
+        "credit": 4
     },
     {
         "course_name": "ACIT 1620",
@@ -27,7 +29,8 @@
         "presentations": 0,
         "participation": 0,
         "midterm": 20,
-        "final": 30
+        "final": 30,
+        "credit": 4
     },
     {
         "course_name": "ACIT 1630",
@@ -37,7 +40,8 @@
         "presentations": 0,
         "participation": 0,
         "midterm": 20,
-        "final": 20
+        "final": 20,
+        "credit": 4
     },
     {
         "course_name": "COMM 1116",
@@ -47,7 +51,8 @@
         "presentations": 20,
         "participation": 10,
         "midterm": 30,
-        "final": 30
+        "final": 30,
+        "credit": 4
     },
     {
         "course_name": "MATH 1310",
@@ -57,7 +62,8 @@
         "presentations": 0,
         "participation": 0,
         "midterm": 30,
-        "final": 40
+        "final": 40,
+        "credit": 4
     },
     {
         "course_name": "ORGB 1100",
@@ -67,7 +73,8 @@
         "presentations": 10,
         "participation": 10,
         "midterm": 25,
-        "final": 25
+        "final": 25,
+        "credit": 3
     },
     {
         "course_name": "ACIT 2420",
@@ -77,7 +84,8 @@
         "presentations": 0,
         "participation": 0,
         "midterm": 25,
-        "final": 25
+        "final": 25,
+        "credit": 4
     },
     {
         "course_name": "ACIT 2515",
@@ -87,7 +95,8 @@
         "presentations": 0,
         "participation": 0,
         "midterm": 20,
-        "final": 30
+        "final": 30,
+        "credit": 4
     },
     {
         "course_name": "ACIT 2520",
@@ -97,7 +106,8 @@
         "presentations": 0,
         "participation": 0,
         "midterm": 20,
-        "final": 20
+        "final": 20,
+        "credit": 4
     },
     {
         "course_name": "ACIT 2620",
@@ -107,7 +117,8 @@
         "presentations": 0,
         "participation": 0,
         "midterm": 15,
-        "final": 25
+        "final": 25,
+        "credit": 4
     },
     {
         "course_name": "ACIT 2811",
@@ -117,7 +128,8 @@
         "presentations": 0,
         "participation": 0,
         "midterm": 0,
-        "final": 10
+        "final": 10,
+        "credit": 3
     },
     {
         "course_name": "ACIT 2831",
@@ -127,7 +139,8 @@
         "presentations": 0,
         "participation": 0,
         "midterm": 25,
-        "final": 25
+        "final": 25,
+        "credit": 4
     },
     {
         "course_name": "ACIT 2911",
@@ -137,7 +150,8 @@
         "presentations": 0,
         "participation": 0,
         "midterm": 30,
-        "final": 40
+        "final": 40,
+        "credit": 4
     },
     {
         "course_name": "ACIT 4770",
@@ -147,7 +161,8 @@
         "presentations": 0,
         "participation": 20,
         "midterm": 0,
-        "final": 0
+        "final": 0,
+        "credit": 2
     },
     {
         "course_name": "COMM 2216",
@@ -157,7 +172,8 @@
         "presentations": 0,
         "participation": 0,
         "midterm": 20,
-        "final": 20
+        "final": 20,
+        "credit": 4
     },
     {
         "course_name": "MATH 1350",
@@ -167,7 +183,8 @@
         "presentations": 0,
         "participation": 0,
         "midterm": 30,
-        "final": 40
+        "final": 40,
+        "credit": 4
     },
     {
         "course_name": "ACIT 3420",
@@ -177,7 +194,8 @@
         "presentations": 10,
         "participation": 15,
         "midterm": 0,
-        "final": 30
+        "final": 30,
+        "credit": 4
     },
     {
         "course_name": "ACIT 3475",
@@ -187,7 +205,8 @@
         "presentations": 0,
         "participation": 0,
         "midterm": 0,
-        "final": 30
+        "final": 30,
+        "credit": 4
     },
     {
         "course_name": "ACIT 3640",
@@ -197,7 +216,8 @@
         "presentations": 0,
         "participation": 20,
         "midterm": 0,
-        "final": 20
+        "final": 20,
+        "credit": 4
     },
     {
         "course_name": "ACIT 3771",
@@ -207,7 +227,8 @@
         "presentations": 0,
         "participation": 0,
         "midterm": 0,
-        "final": 25
+        "final": 25,
+        "credit": 4
     },
     {
         "course_name": "ACIT 3896",
@@ -217,7 +238,8 @@
         "presentations": 0,
         "participation": 0,
         "midterm": 0,
-        "final": 60
+        "final": 60,
+        "credit": 4
     },
     {
         "course_name": "ACIT 3910",
@@ -227,7 +249,8 @@
         "presentations": 0,
         "participation": 5,
         "midterm": 20,
-        "final": 30
+        "final": 30,
+        "credit": 4
     },
     {
         "course_name": "ACIT 3495",
@@ -237,7 +260,8 @@
         "presentations": 0,
         "participation": 5,
         "midterm": 0,
-        "final": 30
+        "final": 30,
+        "credit": 4
     },
     {
         "course_name": "ACIT 3855",
@@ -247,7 +271,8 @@
         "presentations": 0,
         "participation": 0,
         "midterm": 0,
-        "final": 35
+        "final": 35,
+        "credit": 4
     },
     {
         "course_name": "ACIT 4630",
@@ -257,7 +282,8 @@
         "presentations": 10,
         "participation": 0,
         "midterm": 0,
-        "final": 35
+        "final": 35,
+        "credit": 4
     },
     {
         "course_name": "ACIT 4640",
@@ -267,7 +293,8 @@
         "presentations": 0,
         "participation": 40,
         "midterm": 0,
-        "final": 60
+        "final": 60,
+        "credit": 4
     },
     {
         "course_name": "ACIT 4850",
@@ -277,7 +304,8 @@
         "presentations": 0,
         "participation": 0,
         "midterm": 0,
-        "final": 35
+        "final": 35,
+        "credit": 4
     },
     {
         "course_name": "ACIT 4880",
@@ -287,7 +315,8 @@
         "presentations": 0,
         "participation": 5,
         "midterm": 0,
-        "final": 30
+        "final": 30,
+        "credit": 4
     }
     
 

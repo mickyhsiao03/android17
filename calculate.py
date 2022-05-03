@@ -3,10 +3,9 @@ import os
 import os.path
 from datetime import date
 
-user_name = input('enter a user name: ')
 
 
-def calculate(course, quiz, lab, assignment, presentation, participation, midterm, final):
+def calculate(user_name, course, quiz, lab, assignment, presentation, participation, midterm, final):
     check_list = []
     with open("./courses.json" , 'r') as f:
         file_data = json.load(f)
@@ -89,5 +88,4 @@ def write_data(user_name, course, quiz_mark, lab_mark, assignment_mark, presenta
             f.truncate()
     return total_mark
 
-calculate('ACIT 1515',1000,20,30,50,10,20,10)
         
