@@ -36,58 +36,7 @@ def calculate(course, quiz, lab, assignment, presentation, participation, midter
                         'final mark:', final_mark,
                         'total mark:', total_mark
                     )
-                    details = write_data(user_name, course, quiz_mark, lab_mark, assignment_mark, presentation_mark, participation_mark, midterm_mark, final_mark, total_mark)
-                    return details
-
-def write_data(user_name, course, quiz_mark, lab_mark, assignment_mark, presentation_mark, participation_mark, midterm_mark, final_mark, total_mark):
-    today = date.today()
-    if not os.path.exists("./users/{0}.json".format(user_name)):
-        create_json = {
-                            "course_name": "",
-                            "quiz": 0,
-                            "lab": 0,
-                            "assignments_projects": 0,
-                            "presentations": 0,
-                            "participation": 0,
-                            "midterm": 0,
-                            "final": 0,
-                            "total": 0,
-                            "date": ""
-                        }
-        with open("./users/{0}.json".format(user_name), 'w') as f:
-            json.dump(create_json, f, indent=4)
-        with open("./users/{0}.json".format(user_name), 'r+') as f:
-            file_data = json.load(f)
-            file_data['course_name'] = course
-            file_data['quiz'] = quiz_mark
-            file_data['lab'] = lab_mark
-            file_data['assignments_projects'] = assignment_mark
-            file_data['presentations'] = presentation_mark
-            file_data['participation'] = participation_mark
-            file_data['midterm'] = midterm_mark
-            file_data['final'] = final_mark
-            file_data['total'] = total_mark
-            file_data['date'] = today.strftime("%m/%d/%y")
-            f.seek(0)
-            json.dump(file_data, f, indent =4)
-            f.truncate()
-    else:
-        with open("./users/{0}.json".format(user_name), 'r+') as f:
-            file_data = json.load(f)
-            file_data['course_name'] = course
-            file_data['quiz'] = quiz_mark
-            file_data['lab'] = lab_mark
-            file_data['assignments_projects'] = assignment_mark
-            file_data['presentations'] = presentation_mark
-            file_data['participation'] = participation_mark
-            file_data['midterm'] = midterm_mark
-            file_data['final'] = final_mark
-            file_data['total'] = total_mark
-            file_data['date'] = today.strftime("%m/%d/%y")
-            f.seek(0)
-            json.dump(file_data, f, indent =4)
-            f.truncate()
-    return total_mark
-
-calculate('ACIT 1515',1000,20,30,50,10,20,10)
-        
+                   # details = write_data(user_name, course, quiz_mark, lab_mark, assignment_mark, presentation_mark, participation_mark, midterm_mark, final_mark, total_mark)
+                    return 
+ 
+            
