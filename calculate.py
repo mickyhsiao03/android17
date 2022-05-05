@@ -57,14 +57,14 @@ def update_json_file(username, date, course, quiz, lab, assignment, presentation
         data["midterm"] = midterm
         data["final"] = final
         data["total"] = total
-        data["date"] = date
+        data["date"] = str(date)
         file.seek(0)
         json.dump(data, file, indent =4)
         file.truncate()
         return data
 
 def write_data(user_name, course, quiz_mark, lab_mark, assignment_mark, presentation_mark, participation_mark, midterm_mark, final_mark, total_mark):
-    today = date.today()
+    today = date.today().strftime("%m/%d/%y")
     if not os.path.exists("./users/{0}.json".format(user_name)):
         create_json = {
                             "course_name": "",

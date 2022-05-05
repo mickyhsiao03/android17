@@ -75,7 +75,6 @@ def test_update_json_file(mock_file, mock_json, grades):
     update_json_file(
         "Nikola", 
         date.today().strftime("%m/%d/%y"),
-        "2022",
         "ACIT 1420", 
         grades["quiz"], 
         grades["lab"],
@@ -107,7 +106,7 @@ def test_write_data(mock_file, mock_json,  grades):
         grades["final"], 
         grades["total"]
     )
-    assert result == "JSON Created & Updated"
+    assert result == 'JSON successfully updated'
 
 @patch("os.path.exists")
 @patch("json.load")
