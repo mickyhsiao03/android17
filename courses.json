@@ -1,0 +1,323 @@
+[
+    {
+        "course_name": "ACIT 1420",
+        "quiz": 15,
+        "lab": 20,
+        "assignments_projects": 0,
+        "presentations": 10,
+        "participation": 15,
+        "midterm": 15,
+        "final": 25,
+        "credit": 4
+    },
+    {
+        "course_name": "ACIT 1515",
+        "quiz": 20,
+        "lab": 20,
+        "assignments_projects": 0,
+        "presentations": 0,
+        "participation": 10,
+        "midterm": 25,
+        "final": 25,
+        "credit": 4
+    },
+    {
+        "course_name": "ACIT 1620",
+        "quiz": 10,
+        "lab": 20,
+        "assignments_projects": 20,
+        "presentations": 0,
+        "participation": 0,
+        "midterm": 20,
+        "final": 30,
+        "credit": 4
+    },
+    {
+        "course_name": "ACIT 1630",
+        "quiz": 10,
+        "lab": 20,
+        "assignments_projects": 30,
+        "presentations": 0,
+        "participation": 0,
+        "midterm": 20,
+        "final": 20,
+        "credit": 4
+    },
+    {
+        "course_name": "COMM 1116",
+        "quiz": 10,
+        "lab": 0,
+        "assignments_projects": 0,
+        "presentations": 20,
+        "participation": 10,
+        "midterm": 30,
+        "final": 30,
+        "credit": 4
+    },
+    {
+        "course_name": "MATH 1310",
+        "quiz": 7.5,
+        "lab": 7.5,
+        "assignments_projects": 15,
+        "presentations": 0,
+        "participation": 0,
+        "midterm": 30,
+        "final": 40,
+        "credit": 4
+    },
+    {
+        "course_name": "ORGB 1100",
+        "quiz": 0,
+        "lab": 15,
+        "assignments_projects": 15,
+        "presentations": 10,
+        "participation": 10,
+        "midterm": 25,
+        "final": 25,
+        "credit": 3
+    },
+    {
+        "course_name": "ACIT 2420",
+        "quiz": 10,
+        "lab": 20,
+        "assignments_projects": 20,
+        "presentations": 0,
+        "participation": 0,
+        "midterm": 25,
+        "final": 25,
+        "credit": 4
+    },
+    {
+        "course_name": "ACIT 2515",
+        "quiz": 0,
+        "lab": 0,
+        "assignments_projects": 50,
+        "presentations": 0,
+        "participation": 0,
+        "midterm": 20,
+        "final": 30,
+        "credit": 4
+    },
+    {
+        "course_name": "ACIT 2520",
+        "quiz": 20,
+        "lab": 20,
+        "assignments_projects": 20,
+        "presentations": 0,
+        "participation": 0,
+        "midterm": 20,
+        "final": 20,
+        "credit": 4
+    },
+    {
+        "course_name": "ACIT 2620",
+        "quiz": 10,
+        "lab": 10,
+        "assignments_projects": 40,
+        "presentations": 0,
+        "participation": 0,
+        "midterm": 15,
+        "final": 25,
+        "credit": 4
+    },
+    {
+        "course_name": "ACIT 2811",
+        "quiz": 30,
+        "lab": 20,
+        "assignments_projects": 40,
+        "presentations": 0,
+        "participation": 0,
+        "midterm": 0,
+        "final": 10,
+        "credit": 3
+    },
+    {
+        "course_name": "ACIT 2831",
+        "quiz": 0,
+        "lab": 20,
+        "assignments_projects": 30,
+        "presentations": 0,
+        "participation": 0,
+        "midterm": 25,
+        "final": 25,
+        "credit": 4
+    },
+    {
+        "course_name": "ACIT 2911",
+        "quiz": 15,
+        "lab": 0,
+        "assignments_projects": 15,
+        "presentations": 0,
+        "participation": 0,
+        "midterm": 30,
+        "final": 40,
+        "credit": 4
+    },
+    {
+        "course_name": "ACIT 4770",
+        "quiz": 40,
+        "lab": 0,
+        "assignments_projects": 40,
+        "presentations": 0,
+        "participation": 20,
+        "midterm": 0,
+        "final": 0,
+        "credit": 2
+    },
+    {
+        "course_name": "COMM 2216",
+        "quiz": 10,
+        "lab": 20,
+        "assignments_projects": 30,
+        "presentations": 0,
+        "participation": 0,
+        "midterm": 20,
+        "final": 20,
+        "credit": 4
+    },
+    {
+        "course_name": "MATH 1350",
+        "quiz": 20,
+        "lab": 10,
+        "assignments_projects": 0,
+        "presentations": 0,
+        "participation": 0,
+        "midterm": 30,
+        "final": 40,
+        "credit": 4
+    },
+    {
+        "course_name": "ACIT 3420",
+        "quiz": 20,
+        "lab": 25,
+        "assignments_projects": 0,
+        "presentations": 10,
+        "participation": 15,
+        "midterm": 0,
+        "final": 30,
+        "credit": 4
+    },
+    {
+        "course_name": "ACIT 3475",
+        "quiz": 20,
+        "lab": 50,
+        "assignments_projects": 0,
+        "presentations": 0,
+        "participation": 0,
+        "midterm": 0,
+        "final": 30,
+        "credit": 4
+    },
+    {
+        "course_name": "ACIT 3640",
+        "quiz": 20,
+        "lab": 0,
+        "assignments_projects": 40,
+        "presentations": 0,
+        "participation": 20,
+        "midterm": 0,
+        "final": 20,
+        "credit": 4
+    },
+    {
+        "course_name": "ACIT 3771",
+        "quiz": 15,
+        "lab": 30,
+        "assignments_projects": 30,
+        "presentations": 0,
+        "participation": 0,
+        "midterm": 0,
+        "final": 25,
+        "credit": 4
+    },
+    {
+        "course_name": "ACIT 3896",
+        "quiz": 10,
+        "lab": 20,
+        "assignments_projects": 10,
+        "presentations": 0,
+        "participation": 0,
+        "midterm": 0,
+        "final": 60,
+        "credit": 4
+    },
+    {
+        "course_name": "ACIT 3910",
+        "quiz": 10,
+        "lab": 20,
+        "assignments_projects": 15,
+        "presentations": 0,
+        "participation": 5,
+        "midterm": 20,
+        "final": 30,
+        "credit": 4
+    },
+    {
+        "course_name": "ACIT 3495",
+        "quiz": 5,
+        "lab": 30,
+        "assignments_projects": 30,
+        "presentations": 0,
+        "participation": 5,
+        "midterm": 0,
+        "final": 30,
+        "credit": 4
+    },
+    {
+        "course_name": "ACIT 3855",
+        "quiz": 20,
+        "lab": 35,
+        "assignments_projects": 10,
+        "presentations": 0,
+        "participation": 0,
+        "midterm": 0,
+        "final": 35,
+        "credit": 4
+    },
+    {
+        "course_name": "ACIT 4630",
+        "quiz": 20,
+        "lab": 35,
+        "assignments_projects": 0,
+        "presentations": 10,
+        "participation": 0,
+        "midterm": 0,
+        "final": 35,
+        "credit": 4
+    },
+    {
+        "course_name": "ACIT 4640",
+        "quiz": 0,
+        "lab": 0,
+        "assignments_projects": 0,
+        "presentations": 0,
+        "participation": 40,
+        "midterm": 0,
+        "final": 60,
+        "credit": 4
+    },
+    {
+        "course_name": "ACIT 4850",
+        "quiz": 15,
+        "lab": 35,
+        "assignments_projects": 15,
+        "presentations": 0,
+        "participation": 0,
+        "midterm": 0,
+        "final": 35,
+        "credit": 4
+    },
+    {
+        "course_name": "ACIT 4880",
+        "quiz": 5,
+        "lab": 30,
+        "assignments_projects": 30,
+        "presentations": 0,
+        "participation": 5,
+        "midterm": 0,
+        "final": 30,
+        "credit": 4
+    }
+    
+
+]
