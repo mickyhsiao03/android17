@@ -44,7 +44,7 @@ def calculate(user_name, course, quiz, lab, assignment, presentation, participat
                         'final': final_mark,
                         'total': total_mark
                     }
-
+#called
 def update_json_file(username, date, course, quiz, lab, assignment, presentation, participation, midterm, final, total):
     with open("./users/{0}.json".format(username), 'r+') as file:
         data = json.load(file)
@@ -88,3 +88,5 @@ def write_data(user_name, course, quiz_mark, lab_mark, assignment_mark, presenta
         presentation_mark, participation_mark, midterm_mark, final_mark, total_mark)
 
     return "JSON successfully updated"
+
+
