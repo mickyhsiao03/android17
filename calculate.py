@@ -45,7 +45,7 @@ def calculate(user_name, course, quiz, lab, assignment, presentation, participat
                         'total': total_mark
                     }
 #called
-def update_json_file(username, date, course, quiz, lab, assignment, presentation, participation, midterm, final, total):
+def update_json_file(username, today, course, quiz, lab, assignment, presentation, participation, midterm, final, total):
     with open("./users/{0}.json".format(username), 'r+') as file:
         data = json.load(file)
         data["course_name"] = course
@@ -57,7 +57,7 @@ def update_json_file(username, date, course, quiz, lab, assignment, presentation
         data["midterm"] = midterm
         data["final"] = final
         data["total"] = total
-        data["date"] = date
+        data["date"] = today.strftime("%m/%d/%y")
         file.seek(0)
         json.dump(data, file, indent =4)
         file.truncate()
