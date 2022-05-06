@@ -74,7 +74,7 @@ def test_calculate_invalid(mock_file):
 def test_update_json_file(mock_file, mock_json, grades):
     update_json_file(
         "Nikola", 
-        date.today().strftime("%m/%d/%y"),
+        date.today(),
         "ACIT 1420", 
         grades["quiz"], 
         grades["lab"],
@@ -90,10 +90,11 @@ def test_update_json_file(mock_file, mock_json, grades):
     assert mock_file.call_args[0][0] == './users/Nikola.json'
     assert mock_file.assert_called_once_with('./users/Nikola.json', 'r+') is None
 
+@patch("os.path.exists", return_value = False)
 @patch("json.load")
 @patch("json.dump")
 @patch("builtins.open", new_callable=mock_open, read_data=USER_JSON)
-def test_write_data(mock_file, mock_json,  grades):
+def test_write_data(mock_file, mock_json, mock_os, grades):
     result = write_data(
         "Nikola", 
         "ACIT 1420", 
@@ -106,9 +107,9 @@ def test_write_data(mock_file, mock_json,  grades):
         grades["final"], 
         grades["total"]
     )
-    assert result == 'JSON successfully updated'
+    assert result == 'JSON Created & Updated' 
 
-@patch("os.path.exists")
+@patch("os.path.exists", return_value = True)
 @patch("json.load")
 @patch("json.dump")
 @patch("builtins.open", new_callable=mock_open, read_data=USER_JSON)
@@ -126,3 +127,4 @@ def test_write_data_exists(mock_file, mock_json, mock_os, grades):
         grades["total"]
     )
     assert result == "JSON successfully updated" 
+
