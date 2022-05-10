@@ -26,37 +26,37 @@ def option():
             if course_dict["course_name"] == selected_course:
                 for key in course_dict:
                     if (course_dict[key] != 0) and (key != "credit") and (key != "course_name"):
-                        returned_form += f"<div class='form-group'><input type='number' name='{key}' placeholder='{key}' class='form-control' />"
+                        returned_form += f"<div class='form-group'><input type='number' step='0.01' min=0 max=100 name='{key}' placeholder='{key}' class='form-control' />"
                 return returned_form
 
 @app.route("/calculate_grade", methods = ["POST"])
 def calculate_post():
     try:
-        quiz = int(request.form["quiz"])
+        quiz = float(request.form["quiz"])
     except KeyError:
         quiz = 0
     try:
-        lab = int(request.form["lab"])
+        lab = float(request.form["lab"])
     except KeyError:
         lab = 0
     try:
-        assignments = int(request.form["assignments_projects"])
+        assignments = float(request.form["assignments_projects"])
     except KeyError:
         assignments = 0
     try:
-        presentations = int(request.form["presentations"])
+        presentations = float(request.form["presentations"])
     except KeyError:
         presentations = 0
     try:
-        participation = int(request.form["participation"])
+        participation = float(request.form["participation"])
     except KeyError:
         participation = 0
     try:
-        midterm = int(request.form["midterm"])
+        midterm = float(request.form["midterm"])
     except KeyError:
         midterm = 0
     try:
-        final = int(request.form["final"])
+        final = float(request.form["final"])
     except KeyError:
         final = 0
 
@@ -72,7 +72,7 @@ def calculate_post():
         final
     )
     
-    flash(f"Your final grade for {request.form['course_selection']} is {final_calculated_grade['total']}")
+    flash(f"Your final grade for {request.form['course_selection']} is {int(final_calculated_grade['total'])}")
     return render_template("results.html")
 
 if __name__ == "__main__":
