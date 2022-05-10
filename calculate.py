@@ -48,25 +48,66 @@ def calculate(user_name, course, quiz, lab, assignment, presentation, participat
 def update_json_file(username, today, course, quiz, lab, assignment, presentation, participation, midterm, final, total):
     with open("./users/{0}.json".format(username), 'r+') as file:
         data = json.load(file)
-        data["course_name"] = course
-        data["quiz"] = quiz
-        data["lab"] = lab
-        data["assignments_projects"] = assignment
-        data["presentations"] = presentation
-        data["participation"] = participation
-        data["midterm"] = midterm
-        data["final"] = final
-        data["total"] = total
-        data["date"] = today.strftime("%m/%d/%y")
-        file.seek(0)
-        json.dump(data, file, indent =4)
-        file.truncate()
+        user_list = []
+        for i in data:
+            user_list.append(i['course_name'])
+            if i['course_name']=="":
+                for i in data:
+                    i["course_name"] = course
+                    i["quiz"] = quiz
+                    i["lab"] = lab
+                    i["assignments_projects"] = assignment
+                    i["presentations"] = presentation
+                    i["participation"] = participation
+                    i["midterm"] = midterm
+                    i["final"] = final
+                    i["total"] = total
+                    i["date"] = today.strftime("%m/%d/%y")
+                    file.seek(0)
+                    json.dump(data, file, indent =4)
+                    file.truncate()
+                return data
+
+
+        if course not in user_list:
+            to_add = {
+                        "course_name": course,
+                        "quiz": quiz,
+                        "lab": lab,
+                        "assignments_projects": assignment,
+                        "presentations": presentation,
+                        "participation": participation,
+                        "midterm": midterm,
+                        "final": final,
+                        "total": round(total,2),
+                        "date": today.strftime("%m/%d/%y")
+            }
+            data.append(to_add)
+            file.seek(0)
+            json.dump(data, file, indent =4)
+            file.truncate()
+        else:
+            for i in data:
+                if i['course_name'] == course:
+                    i['quiz'] = quiz
+                    i['lab'] = lab
+                    i['assignments_projects'] = assignment
+                    i['presentations'] = presentation
+                    i['participation'] = participation
+                    i['midterm'] = midterm
+                    i['final'] = final
+                    i['total'] = round(total,2)
+                    i['date'] = today.strftime("%m/%d/%y")
+                    file.seek(0)
+                    json.dump(data, file, indent =4)
+                    file.truncate()
+
         return data
 
 def write_data(user_name, course, quiz_mark, lab_mark, assignment_mark, presentation_mark, participation_mark, midterm_mark, final_mark, total_mark):
     today = date.today()
     if not os.path.exists("./users/{0}.json".format(user_name)):
-        create_json = {
+        create_json = [{
                             "course_name": "",
                             "quiz": 0,
                             "lab": 0,
@@ -77,7 +118,7 @@ def write_data(user_name, course, quiz_mark, lab_mark, assignment_mark, presenta
                             "final": 0,
                             "total": 0,
                             "date": ""
-                        }
+                        }]
         with open("./users/{0}.json".format(user_name), 'w') as f:
             json.dump(create_json, f, indent=4)
         update_json_file(user_name, today, course, quiz_mark, lab_mark, assignment_mark, 

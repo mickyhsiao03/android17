@@ -61,7 +61,7 @@ def calculate_post():
         final = 0
 
     final_calculated_grade = calculate(
-        "nikola",
+        "micky",
         request.form["course_selection"],
         quiz,
         lab,
@@ -71,9 +71,13 @@ def calculate_post():
         midterm,
         final
     )
+
+    write_data(final_calculated_grade['user'], request.form["course_selection"],final_calculated_grade['quiz'],final_calculated_grade['lab'],final_calculated_grade['assignment'],final_calculated_grade['presentation'],final_calculated_grade['participation'],final_calculated_grade['midterm'],final_calculated_grade['final'],final_calculated_grade['total'])
+
+
     
     flash(f"Your final grade for {request.form['course_selection']} is {int(final_calculated_grade['total'])}")
     return render_template("results.html")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(port=6969,debug=True)

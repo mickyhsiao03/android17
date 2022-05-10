@@ -1,0 +1,38 @@
+[
+    {
+        "course_name": "ACIT 1420",
+        "quiz": 0.15,
+        "lab": 0.2,
+        "assignments_projects": 0.0,
+        "presentations": 0.1,
+        "participation": 0.15,
+        "midterm": 1.65,
+        "final": 0.25,
+        "total": 2.5,
+        "date": "05/10/22"
+    },
+    {
+        "course_name": "COMM 1116",
+        "quiz": 0.30000000000000004,
+        "lab": 0.0,
+        "assignments_projects": 0.0,
+        "presentations": 0.6000000000000001,
+        "participation": 0.30000000000000004,
+        "midterm": 0.8999999999999999,
+        "final": 0.8999999999999999,
+        "total": 3.0,
+        "date": "05/10/22"
+    },
+    {
+        "course_name": "ACIT 2420",
+        "quiz": 0.2,
+        "lab": 0.4,
+        "assignments_projects": 0.4,
+        "presentations": 0.0,
+        "participation": 0.0,
+        "midterm": 0.5,
+        "final": 0.5,
+        "total": 2.0,
+        "date": "05/10/22"
+    }
+]
