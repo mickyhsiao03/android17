@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/htmx.org@1.7.0" defer></script>
+</head>
+<body>
+
+
+    <form hx-post="/calculate_grade">
+        <select name="course_selection" hx-get="/option" hx-target="#dynamic-form" hx-swap="innerHTML">
+            <option value="none" selected>--- SELECT A COURSE --- </option>
+            {% for n in courses %}
+            <option value="{{n}}" name="{{n}}">{{n}}</option>
+            {% endfor %}
+        </select>
+        <div id="dynamic-form"></div>
+    <input type="submit" value="Calculate Grade" class="btn btn-primary" id="test" hx-post="/calculate_grade"/>
+    </form>
+
+</body>
+</html>

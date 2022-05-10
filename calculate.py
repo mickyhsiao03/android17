@@ -89,4 +89,3 @@ def write_data(user_name, course, quiz_mark, lab_mark, assignment_mark, presenta
 
     return "JSON successfully updated"
 
-
