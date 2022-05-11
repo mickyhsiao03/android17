@@ -24,45 +24,32 @@ def option():
 
 @app.route("/calculate_grade", methods = ["POST"])
 def calculate_post():
-    try:
-        quiz = float(request.form["quiz"])
-    except KeyError:
-        quiz = 0
-    try:
-        lab = float(request.form["lab"])
-    except KeyError:
-        lab = 0
-    try:
-        assignments = float(request.form["assignments_projects"])
-    except KeyError:
-        assignments = 0
-    try:
-        presentations = float(request.form["presentations"])
-    except KeyError:
-        presentations = 0
-    try:
-        participation = float(request.form["participation"])
-    except KeyError:
-        participation = 0
-    try:
-        midterm = float(request.form["midterm"])
-    except KeyError:
-        midterm = 0
-    try:
-        final = float(request.form["final"])
-    except KeyError:
-        final = 0
+
+    blank_dict = {
+        "quiz": 0,
+        "lab": 0,
+        "assignments_projects": 0,
+        "presentations": 0,
+        "participation": 0,
+        "midterm": 0,
+        "final": 0
+    }
+
+    for key in request.form.keys():
+        if key != "course_selection":
+            blank_dict[key] = int(request.form[key])
+
 
     final_calculated_grade = calculate(
         "micky",
         request.form["course_selection"],
-        quiz,
-        lab,
-        assignments,
-        presentations,
-        participation,
-        midterm,
-        final
+        blank_dict["quiz"],
+        blank_dict["lab"],
+        blank_dict["assignments_projects"],
+        blank_dict["presentations"],
+        blank_dict["participation"],
+        blank_dict["midterm"],
+        blank_dict["final"]
     )
 
     write_data(

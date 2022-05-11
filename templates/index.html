@@ -15,9 +15,6 @@
 </div>
 
 <body class="container">
-
-
-
     <form hx-post="/calculate_grade" hx-target="#results">
         <select class="btn btn-secondary dropdown-toggle" name="course_selection" hx-get="/option" hx-target="#dynamic-form">
             <option value="none" selected>--- SELECT A COURSE --- </option>
@@ -29,9 +26,6 @@
         <input type='submit' value='Calculate Grade' class='btn btn-primary mb-1 mt-1'/>
     </form>
 
-
-    <div id="results">
-
-    </div>
+    <div id="results"></div>
 </body>
 </html>
