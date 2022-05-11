@@ -39,9 +39,7 @@ COURSE_JSON = """[
 def grades(mock_file):
     return calculate("Nikola", "ACIT 1420", 100, 80, 0, 70, 90, 70, 80)
 
-@patch("builtins.open", new_callable=mock_open, read_data=COURSE_JSON)
-def test_calculate(mock_file, grades):
-    
+def test_calculate(grades):
     grades = calculate("Nikola", "ACIT 1420", 100, 80, 0, 70, 90, 70, 80)
     assert grades["user"] == "Nikola"
     assert grades["quiz"] == 15
@@ -52,10 +50,6 @@ def test_calculate(mock_file, grades):
     assert grades["midterm"] == 10.5
     assert grades["final"] == 20
     assert grades["total"] == 82
-    
-    assert mock_file.call_count == 1
-    assert mock_file.call_args[0][0] == "./courses.json"
-    assert mock_file.assert_called_once_with("./courses.json", "r") is None
 
 @patch("builtins.open", new_callable=mock_open, read_data=COURSE_JSON)
 def test_calculate_invalid(mock_file):

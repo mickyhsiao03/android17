@@ -1,19 +1,12 @@
-import json
-from flask import Flask, render_template, request, jsonify, flash
+from flask import Flask, render_template, request
 from calculate import *
 
 app = Flask(__name__)
 app.secret_key = "secret"
 
-courses_list = []
-with open("courses.json") as file:
-    data = json.load(file)
-for i in data:
-    courses_list.append(i["course_name"])
-
 @app.route("/")
 def homepage():
-    return render_template("index.html", courses=courses_list)
+    return render_template("index.html", courses=get_all_courses())
 
 @app.route("/option", methods = ['GET'])
 def option():
@@ -22,12 +15,12 @@ def option():
     if selected_course == "none":
         return "Select a course!"
     else:
-        for course_dict in data:
-            if course_dict["course_name"] == selected_course:
-                for key in course_dict:
-                    if (course_dict[key] != 0) and (key != "credit") and (key != "course_name"):
-                        returned_form += f"<div class='form-group'><input type='number' step='0.01' min=0 max=100 name='{key}' placeholder='{key}' class='form-control' />"
-                return returned_form
+        course_dict = get_course_by_name(selected_course)
+        for key in course_dict:
+            if (course_dict[key] != 0) and (key != "credit") and (key != "course_name"):
+                returned_form += f"<div class='mb-3 mt-3'><input type='number' step='0.01' min=0 max=100 name='{key}' placeholder='{key}' class='form-control'/>"
+                returned_form += f"<div class='form-text' style='color:black;'>Weight = {course_dict[key]}%</div>"
+        return returned_form
 
 @app.route("/calculate_grade", methods = ["POST"])
 def calculate_post():
@@ -72,12 +65,20 @@ def calculate_post():
         final
     )
 
-    write_data(final_calculated_grade['user'], request.form["course_selection"],final_calculated_grade['quiz'],final_calculated_grade['lab'],final_calculated_grade['assignment'],final_calculated_grade['presentation'],final_calculated_grade['participation'],final_calculated_grade['midterm'],final_calculated_grade['final'],final_calculated_grade['total'])
-
-
+    write_data(
+        final_calculated_grade['user'], 
+        request.form["course_selection"],
+        final_calculated_grade['quiz'],
+        final_calculated_grade['lab'],
+        final_calculated_grade['assignment'],
+        final_calculated_grade['presentation'],
+        final_calculated_grade['participation'],
+        final_calculated_grade['midterm'],
+        final_calculated_grade['final'],
+        final_calculated_grade['total']
+    )
     
-    flash(f"Your final grade for {request.form['course_selection']} is {int(final_calculated_grade['total'])}")
-    return render_template("results.html")
+    return (f"<div class='alert alert-primary mb-3 mt-3' role='alert'> Your final grade for {request.form['course_selection']} is {int(final_calculated_grade['total'])}% </div>")
 
 if __name__ == "__main__":
     app.run(port=6969,debug=True)
