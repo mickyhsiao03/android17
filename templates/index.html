@@ -9,7 +9,12 @@
     <title>Passulator</title>
     <script src="https://unpkg.com/htmx.org@1.7.0" defer></script>
 </head>
+
+<img src="../images/logo.jpg" alt="Passulator, CIT Grade Calculator Logo">
+
 <body class="container">
+
+
 
     <form hx-post="/calculate_grade" hx-target="#results">
         <select name="course_selection" hx-get="/option" hx-target="#dynamic-form">
