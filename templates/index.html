@@ -10,14 +10,16 @@
     <script src="https://unpkg.com/htmx.org@1.7.0" defer></script>
 </head>
 
-<img src="{{ url_for('static', filename='logo.jpg') }}" alt="Passulator, CIT Grade Calculator Logo">
+<div class="text-center">
+    <img class="img-fluid" src="{{ url_for('static', filename='logo.jpg') }}" alt="Passulator, CIT Grade Calculator Logo" width="800">
+</div>
 
 <body class="container">
 
 
 
     <form hx-post="/calculate_grade" hx-target="#results">
-        <select name="course_selection" hx-get="/option" hx-target="#dynamic-form">
+        <select class="btn btn-secondary dropdown-toggle" name="course_selection" hx-get="/option" hx-target="#dynamic-form">
             <option value="none" selected>--- SELECT A COURSE --- </option>
             {% for n in courses %}
             <option value="{{n}}" name="{{n}}">{{n}}</option>
