@@ -36,12 +36,12 @@ def calculate_post():
     }
 
     for key in request.form.keys():
-        if key != "course_selection":
+        if key != "course_selection" and key !="user":
             blank_dict[key] = int(request.form[key])
 
 
     final_calculated_grade = calculate(
-        "micky",
+        request.form["user"],
         request.form["course_selection"],
         blank_dict["quiz"],
         blank_dict["lab"],
