@@ -1,15 +1,15 @@
 [
     {
         "course_name": "ACIT 1515",
-        "quiz": 20.0,
-        "lab": 18.0,
+        "quiz": 4.0,
+        "lab": 4.0,
         "assignments_projects": 0.0,
         "presentations": 0.0,
-        "participation": 8.0,
-        "midterm": 25.0,
-        "final": 22.5,
-        "total": 93.5,
-        "date": "05/10/22"
+        "participation": 2.0,
+        "midterm": 5.0,
+        "final": 5.0,
+        "total": 20.0,
+        "date": "05/12/22"
     },
     {
         "course_name": "ACIT 1420",
