@@ -16,8 +16,10 @@
 
 <body class="container">
     <form hx-post="/calculate_grade" hx-target="#results">
-        <input type="text" placeholder="User Name" name="user"> <br>
-        <select class="btn btn-secondary dropdown-toggle" name="course_selection" hx-get="/option" hx-target="#dynamic-form">
+        <label for="username" class="form-label">Please enter your username:</label>
+        <input type="text" placeholder="Username" name="user" class="mb-3 mt-3 form-control" id="username"> <br>
+        <label for="dropdown" class="form-label">Please select a course:</label>
+        <select class="btn btn-secondary dropdown-toggle form-control" name="course_selection" hx-get="/option" hx-target="#dynamic-form" id="dropdown">
             <option value="none" selected>--- SELECT A COURSE --- </option>
             {% for n in courses %}
             <option value="{{n}}" name="{{n}}">{{n}}</option>

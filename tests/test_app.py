@@ -1,7 +1,4 @@
 import pytest 
-from flask import Flask
-import os
-import tempfile
 from app import *
 
 
@@ -22,12 +19,18 @@ def test_homepage(client):
 
 """ Unit test for "course search" function through dropdown menu """
 def test_option(client):
-    response = client.get("/option")
+    response = client.get("/option", query_string={"course_selection": "none"})
     assert b"Select a course!" in response.data
     assert response.status_code == 200
 
 """ Unit test for calculate grade and update database """
 def test_calculate_post(client):
-    response = client.post("/calculate_grade")
+    post_data = {
+        "user": "test",
+        "course_selection": "ACIT 1420",
+        "quiz": 50,
+        "lab": 100
+    }
+    response = client.post("/calculate_grade", data = post_data)
     assert response.status_code == 200
     

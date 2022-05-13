@@ -34,6 +34,24 @@ COURSE_JSON = """[
     }
 ]"""
 
+UPDATED_JSON = """[
+    {
+        "course_name": "ACIT 1420",
+        "quiz": 0,
+        "lab": 0,
+        "assignments_projects": 0,
+        "presentations": 0,
+        "participation": 0,
+        "midterm": 0,
+        "final": 0,
+        "total": 0,
+        "date": ""
+    }
+]"""
+
+
+
+
 @pytest.fixture
 @patch("builtins.open", new_callable=mock_open, read_data=COURSE_JSON)
 def grades(mock_file):
@@ -62,27 +80,6 @@ def test_calculate_invalid(mock_file):
     with pytest.raises(ValueError):
         calculate("Nikola", "Velinov", 0, 0, 0, 0, 101, 0, 0)
 
-@patch("json.dump")
-@patch("json.load")
-@patch("builtins.open", new_callable=mock_open)
-def test_update_json_file(mock_file, mock_json, grades):
-    update_json_file(
-        "Nikola", 
-        date.today(),
-        "ACIT 1420", 
-        grades["quiz"], 
-        grades["lab"],
-        grades["assignment"], 
-        grades["presentation"], 
-        grades["participation"], 
-        grades["midterm"], 
-        grades["final"], 
-        grades["total"]
-    )
-
-    assert mock_file.call_count == 1
-    assert mock_file.call_args[0][0] == './users/Nikola.json'
-    assert mock_file.assert_called_once_with('./users/Nikola.json', 'r+') is None
 
 @patch("os.path.exists", return_value = False)
 @patch("json.load")
@@ -122,3 +119,62 @@ def test_write_data_exists(mock_file, mock_json, mock_os, grades):
     )
     assert result == "JSON successfully updated" 
 
+
+@patch("builtins.open", new_callable=mock_open, read_data=COURSE_JSON)
+def test_get_course_by_name(mock_file):
+    result = get_course_by_name("ACIT 1420")
+    assert result["quiz"] == 15
+    assert result["lab"] == 20
+    assert result["assignments_projects"] == 0
+    assert result["presentations"] == 10
+    assert result["participation"] == 15
+    assert result["midterm"] == 15
+    assert result["final"] == 25
+    assert result["credit"] == 4
+
+@patch("builtins.open", new_callable=mock_open, read_data=COURSE_JSON)
+def test_get_all_courses(mock_file):
+    assert get_all_courses() == ["ACIT 1420"]
+
+@patch("builtins.open", new_callable=mock_open, read_data=USER_JSON)
+def test_multiple_stored_results(mock_file):
+    #Doesnt matter for this test what the numbers are, just that there are multiple course items in the json file
+    result = update_json_file("nikola", date.today(), "ACIT 1620", 1, 1, 1, 1, 1, 1, 1, 7)
+    assert result[0]["quiz"] == 1
+    assert result[0]["lab"] == 1
+    assert result[0]["assignments_projects"] == 1
+    assert result[0]["presentations"] == 1  
+    assert result[0]["participation"] == 1
+    assert result[0]["midterm"] == 1   
+    assert result[0]["final"] == 1
+    assert result[0]["total"] == 7
+    assert result[0]["date"] == "05/12/22"
+
+    updated_dict = {
+        "course_name": "ACIT 1420",
+        "quiz": 1,
+        "lab": 1,
+        "assignments_projects": 1,
+        "presentations": 1,
+        "participation": 1,
+        "midterm": 1,
+        "final": 1,
+        "total": 1,
+        "date": "05/12/22"
+    }
+
+    result = update_json_file("Nikola", date.today(),"ACIT 1420", 1, 1,1, 1, 1, 1, 1, 1)
+    assert result[0] == updated_dict
+    
+@patch("builtins.open", new_callable=mock_open, read_data=UPDATED_JSON)
+def test_update_existing_course(mock_file):    
+    result = update_json_file("nikola", date.today(), "ACIT 1420", 1, 1, 1, 1, 1, 1, 1, 7)
+    assert result[-1]["quiz"] == 1
+    assert result[-1]["lab"] == 1
+    assert result[-1]["assignments_projects"] == 1
+    assert result[-1]["presentations"] == 1  
+    assert result[-1]["participation"] == 1
+    assert result[-1]["midterm"] == 1   
+    assert result[-1]["final"] == 1
+    assert result[-1]["total"] == 7
+    assert result[-1]["date"] == "05/12/22"

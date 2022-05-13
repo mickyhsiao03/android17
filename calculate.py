@@ -58,11 +58,10 @@ def calculate(user_name, course, quiz, lab, assignment, presentation, participat
 
 #called
 def update_json_file(username, today, course, quiz, lab, assignment, presentation, participation, midterm, final, total):
-    with open("./users/{0}.json".format(username), 'r+') as file:
+    with open(f"./users/{username}.json", 'r+') as file:
         data = json.load(file)
-        user_list = []
+        user_list = [i['course_name'] for i in data]
         for i in data:
-            user_list.append(i['course_name'])
             if i['course_name']=="":
                 for i in data:
                     i["course_name"] = course
@@ -80,21 +79,10 @@ def update_json_file(username, today, course, quiz, lab, assignment, presentatio
                     file.truncate()
                 return data
 
-
         if course not in user_list:
-            to_add = {
-                        "course_name": course,
-                        "quiz": quiz,
-                        "lab": lab,
-                        "assignments_projects": assignment,
-                        "presentations": presentation,
-                        "participation": participation,
-                        "midterm": midterm,
-                        "final": final,
-                        "total": round(total,2),
-                        "date": today.strftime("%m/%d/%y")
-            }
-            data.append(to_add)
+            values = [course, quiz, lab, assignment, presentation, participation, midterm, final, round(total,2), today.strftime("%m/%d/%y")]
+            keys = ["course_name", "quiz", "lab", "assignments_projects", "presentations", "participation", "midterm", "final", "total", "date"]
+            data.append(dict(zip(keys, values)))
             file.seek(0)
             json.dump(data, file, indent =4)
             file.truncate()
