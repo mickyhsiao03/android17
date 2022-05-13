@@ -37,7 +37,7 @@ def calculate_post():
 
     for key in request.form.keys():
         if key != "course_selection" and key !="user":
-            blank_dict[key] = int(request.form[key])
+            blank_dict[key] = float(request.form[key])
 
 
     final_calculated_grade = calculate(

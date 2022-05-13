@@ -1,0 +1,26 @@
+[
+    {
+        "course_name": "MATH 1310",
+        "quiz": 6.75,
+        "lab": 4.5,
+        "assignments_projects": 9.0,
+        "presentations": 0.0,
+        "participation": 0.0,
+        "midterm": 18.0,
+        "final": 28.0,
+        "total": 66.25,
+        "date": "05/12/22"
+    },
+    {
+        "course_name": "COMM 1116",
+        "quiz": 7.802,
+        "lab": 0.0,
+        "assignments_projects": 0.0,
+        "presentations": 17.0,
+        "participation": 8.5,
+        "midterm": 25.5,
+        "final": 25.5,
+        "total": 84.3,
+        "date": "05/13/22"
+    }
+]
