@@ -3,6 +3,24 @@ import os
 import os.path
 from datetime import date
 
+def calculate_GPA(user_name):
+    with open("./users/{0}.json".format(user_name), 'r+') as f:
+        file_data = json.load(f)
+        earned_list = {}
+        for i in file_data:
+            if i['total'] >= 50:
+                earned_list[i['course_name']] = i['total']
+    with open("courses.json", 'r') as f:
+        file_data = json.load(f)
+        grades = []
+        credits = []
+        for course in file_data:
+            for i in earned_list:
+                if course['course_name'] == i:
+                    credits.append(course['credit'])
+                    grades.append(course['credit']*earned_list[i])
+    GPA = sum(grades)/sum(credits)
+    return GPA
 
 def get_course_by_name(course):
     with open("courses.json") as f:

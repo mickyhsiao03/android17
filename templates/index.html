@@ -30,5 +30,14 @@
     </form>
 
     <div id="results"></div>
+
+    <form hx-post="/calculate_GPA" hx-target="#GPA_results">
+        <label for="username" class="form-label">Please enter your username:</label>
+        <input type="text" placeholder="Username" name="user" class="mb-3 mt-3 form-control" id="username"> <br>
+        <input type='submit' value='Calculate GPA' class='btn btn-primary mb-1 mt-1'/>
+
+    </form>
+
+    <div id="GPA_results"></div>
 </body>
 </html>

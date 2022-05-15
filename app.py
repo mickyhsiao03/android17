@@ -65,7 +65,15 @@ def calculate_post():
         final_calculated_grade['total']
     )
     
+
+
     return (f"<div class='alert alert-primary mb-3 mt-3' role='alert'> Your final grade for {request.form['course_selection']} is {int(final_calculated_grade['total'])}% </div>")
+
+@app.route("/calculate_GPA", methods = ["POST"])
+def calculate_GPA_form():
+    GPA = calculate_GPA(request.form["user"])
+    return(f"<div class='alert alert-primary mb-3 mt-3' role='alert'> Your GPA for your saved courses is {GPA}% </div>")
+    
 
 if __name__ == "__main__":
     app.run(port=6969,debug=True)

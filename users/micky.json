@@ -1,0 +1,62 @@
+[
+    {
+        "course_name": "ACIT 2420",
+        "quiz": 10.0,
+        "lab": 20.0,
+        "assignments_projects": 20.0,
+        "presentations": 0.0,
+        "participation": 0.0,
+        "midterm": 25.0,
+        "final": 25.0,
+        "total": 100.0,
+        "date": "05/14/22"
+    },
+    {
+        "course_name": "MATH 1310",
+        "quiz": 7.5,
+        "lab": 7.5,
+        "assignments_projects": 15.0,
+        "presentations": 0.0,
+        "participation": 0.0,
+        "midterm": 30.0,
+        "final": 40.0,
+        "total": 100.0,
+        "date": "05/14/22"
+    },
+    {
+        "course_name": "ACIT 3910",
+        "quiz": 10.0,
+        "lab": 20.0,
+        "assignments_projects": 15.0,
+        "presentations": 0.0,
+        "participation": 5.0,
+        "midterm": 20.0,
+        "final": 30.0,
+        "total": 100.0,
+        "date": "05/14/22"
+    },
+    {
+        "course_name": "ACIT 2520",
+        "quiz": 14.0,
+        "lab": 14.0,
+        "assignments_projects": 14.0,
+        "presentations": 0.0,
+        "participation": 0.0,
+        "midterm": 14.0,
+        "final": 14.0,
+        "total": 70.0,
+        "date": "05/14/22"
+    },
+    {
+        "course_name": "ACIT 3420",
+        "quiz": 0.2,
+        "lab": 0.25,
+        "assignments_projects": 0.0,
+        "presentations": 0.1,
+        "participation": 0.15,
+        "midterm": 0.0,
+        "final": 0.3,
+        "total": 1.0,
+        "date": "05/14/22"
+    }
+]
