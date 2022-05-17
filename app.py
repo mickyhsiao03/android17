@@ -35,7 +35,15 @@ def calculate_post():
     
     write_data(**final_calculated_grade,course=request.form["course_selection"])
     
+
+
     return (f"<div class='alert alert-primary mb-3 mt-3' role='alert'> Your final grade for {request.form['course_selection']} is {int(final_calculated_grade['total'])}% </div>")
+
+@app.route("/calculate_GPA", methods = ["POST"])
+def calculate_GPA_form():
+    GPA = calculate_GPA(request.form["user"])
+    return(f"<div class='alert alert-primary mb-3 mt-3' role='alert'> Your GPA for your saved courses is {GPA}% </div>")
+    
 
 
 @app.route("/show_results", methods = ["POST"])
@@ -54,6 +62,7 @@ def results():
         return returned_table
     except FileNotFoundError:
         return "<h4>Please enter a valid username.</h4><h6 class='text-muted'>Please ensure there is at least one grade calculation for your username.</h6>"
+
 
 if __name__ == "__main__":
     app.run(port=6969,debug=True)
