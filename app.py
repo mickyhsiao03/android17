@@ -25,24 +25,31 @@ def option():
 @app.route("/calculate_grade", methods = ["POST"])
 def calculate_post():
 
-    blank_dict = dict.fromkeys(["quiz", "lab", "assignments_projects", "presentations", "participation", "midterm", "final"], 0)
+    try:
+        blank_dict = dict.fromkeys(["quiz", "lab", "assignments_projects", "presentations", "participation", "midterm", "final"], 0)
 
-    for key in request.form.keys():
-        if key != "course_selection" and key !="user":
-            blank_dict[key] = float(request.form[key])
+        for key in request.form.keys():
+            if key != "course_selection" and key !="user":
+                blank_dict[key] = float(request.form[key])
 
-    final_calculated_grade = calculate(request.form["user"],request.form["course_selection"],**blank_dict)
-    
-    write_data(**final_calculated_grade,course=request.form["course_selection"])
-    
+        final_calculated_grade = calculate(request.form["user"],request.form["course_selection"],**blank_dict)
+        
+        write_data(**final_calculated_grade,course=request.form["course_selection"])
+        
 
 
-    return (f"<div class='alert alert-primary mb-3 mt-3' role='alert'> Your final grade for {request.form['course_selection']} is {int(final_calculated_grade['total'])}% </div>")
+        return (f"<div class='alert alert-primary mb-3 mt-3' role='alert'> Your final grade for {request.form['course_selection']} is {int(final_calculated_grade['total'])}% </div>")
+    except ValueError:
+        return "<h4>Please enter a valid username.</h4><h6 class='text-muted'>Please ensure there is at least one grade calculation for your username.</h6>"
+
 
 @app.route("/calculate_GPA", methods = ["POST"])
 def calculate_GPA_form():
-    GPA = calculate_GPA(request.form["user"])
-    return(f"<div class='alert alert-primary mb-3 mt-3' role='alert'> Your GPA for your saved courses is {GPA}% </div>")
+    try:
+        GPA = calculate_GPA(request.form["user"])
+        return(f"<div class='alert alert-primary mb-3 mt-3' role='alert'> Your GPA for your saved courses is {round(GPA,2)}% </div>")
+    except FileNotFoundError:
+        return "<h4>Please enter a valid username.</h4><h6 class='text-muted'>Please ensure there is at least one grade calculation for your username.</h6>"
     
 
 

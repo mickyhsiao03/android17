@@ -34,5 +34,17 @@
         "final": 0.4,
         "total": 2.0,
         "date": "05/17/22"
+    },
+    {
+        "course_name": "ACIT 2620",
+        "quiz": 2.3000000000000003,
+        "lab": 2.3000000000000003,
+        "assignments_projects": 9.200000000000001,
+        "presentations": 0.0,
+        "participation": 0.0,
+        "midterm": 3.4499999999999997,
+        "final": 5.75,
+        "total": 23.0,
+        "date": "05/17/22"
     }
 ]
