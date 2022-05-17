@@ -139,7 +139,7 @@ def test_get_all_courses(mock_file):
 @patch("builtins.open", new_callable=mock_open, read_data=USER_JSON)
 def test_multiple_stored_results(mock_file):
     #Doesnt matter for this test what the numbers are, just that there are multiple course items in the json file
-    result = update_json_file("nikola", date.today(), "ACIT 1620", 1, 1, 1, 1, 1, 1, 1, 7)
+    result = update_json_file("nikola", date(2022, 5, 12), "ACIT 1620", 1, 1, 1, 1, 1, 1, 1, 7)
     assert result[0]["quiz"] == 1
     assert result[0]["lab"] == 1
     assert result[0]["assignments_projects"] == 1
@@ -163,12 +163,12 @@ def test_multiple_stored_results(mock_file):
         "date": "05/12/22"
     }
 
-    result = update_json_file("Nikola", date.today(),"ACIT 1420", 1, 1,1, 1, 1, 1, 1, 1)
+    result = update_json_file("Nikola", date(2022, 5, 12),"ACIT 1420", 1, 1,1, 1, 1, 1, 1, 1)
     assert result[0] == updated_dict
     
 @patch("builtins.open", new_callable=mock_open, read_data=UPDATED_JSON)
 def test_update_existing_course(mock_file):    
-    result = update_json_file("nikola", date.today(), "ACIT 1420", 1, 1, 1, 1, 1, 1, 1, 7)
+    result = update_json_file("nikola", date(2022, 5, 12), "ACIT 1420", 1, 1, 1, 1, 1, 1, 1, 7)
     assert result[-1]["quiz"] == 1
     assert result[-1]["lab"] == 1
     assert result[-1]["assignments_projects"] == 1
