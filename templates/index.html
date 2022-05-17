@@ -33,9 +33,13 @@
                     <button type="submit" class='btn btn-primary mb-1 mt-1' >Download Grades</button>
                     </form>
                     <div id="download">
-                        {% for message in get_flashed_messages() %}
-                        <div class='alert alert-primary mb-3 mt-3' role='alert'>{{ message }}</div>
-                        {% endfor %}
+                        
+                        <div class='alert alert-primary mb-3 mt-3' role='alert'>
+                            {% for message in get_flashed_messages() %}
+                                {{ message }}
+                            {% endfor %}
+                        </div>
+                        
                     </div>
             </div>
         </div>

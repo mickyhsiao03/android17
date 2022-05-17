@@ -48,11 +48,12 @@ def results():
             data = json.load(file)
             data.sort(key=lambda x:x["total"], reverse=True)
         returned_table = "<table class='table'>"
-        returned_table += "<thead><tr><th scope='col'>Course</th><th scope='col'>Final Grade</th></tr></thead>"
+        returned_table += "<thead><tr><th scope='col'>Course</th><th scope='col'>Final Grade</th><th scope='col'>Date Calculated</th></tr></thead>"
         returned_table += "<tbody>"
         for i in data:
-            returned_table += f"<tr><td>{i['course_name']}</td>"
-            returned_table += f"<td>{i['total']}%</td></tr>"
+            returned_table += f"<tr><td>{i['course_name']}</td"
+            returned_table += f"<tr><td>{i['total']}%</td>"
+            returned_table += f"<td>{i['date']}</td></tr>"
         returned_table += " </tbody></table>"
         return returned_table
     except FileNotFoundError:
@@ -64,9 +65,11 @@ def create_download_file():
         global username
         print(username)
         f = open('./users/{0}.json'.format(username), "r")
-        data = json.loads(f.read())
+        data = json.load(f)
         with open('./static/download/{0}.txt'.format(username), 'w') as f:
-            json.dump(data, f, indent=4, sort_keys=True)
+            for i in data:
+                f.write("Course Name: "+ i["course_name"] + "\n" + "Quiz: "+ str(i["quiz"])+ "\n" + "Lab: " + str(i["lab"])+ "\n" + "Assignment Projects: "+ str(i["assignments_projects"])+ "\n"+ "Presentations: "+ str(i["presentations"])+ "\n"
+                        "Participation: "+ str(i["participation"])+ "\n" + "Midterm: " + str(i["midterm"]) + "\n" + "Final: " + str(i["final"]) + "\n" + "Date Calculated: " + str(i["date"]) + "\n \n \n \n")
         filename = '{0}.txt'.format(username)
         # simp_path = 'demo/which_path.docx'
         abs_path = os.path.abspath("./static/download")
@@ -74,7 +77,7 @@ def create_download_file():
         username = ''
         return send_from_directory(abs_path, filename, as_attachment=True)  
     except:
-        message = flash ("Please Check Grade history atleast once!")
+        message = flash ("Please Check Grade History or Calculate Grades at least once!")
         return render_template("index.html", courses=get_all_courses()) 
 
 if __name__ == "__main__":

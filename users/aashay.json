@@ -15,12 +15,12 @@
         "course_name": "ACIT 2515",
         "quiz": 0.0,
         "lab": 0.0,
-        "assignments_projects": 47.5,
+        "assignments_projects": 0.0,
         "presentations": 0.0,
         "participation": 0.0,
-        "midterm": 17.0,
-        "final": 27.0,
-        "total": 91.5,
+        "midterm": 0.0,
+        "final": 0.0,
+        "total": 0.0,
         "date": "05/17/22"
     }
 ]
