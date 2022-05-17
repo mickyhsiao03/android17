@@ -27,8 +27,16 @@
 
         <div class="row border border-primary">
             <div class="col border border-primary">
-                <label for="username" class="form-label">Please enter your username:</label>
-                <input type="text" placeholder="Username" name="user" class="mb-3 mt-3 form-control" id="username">
+                    <form action="{{ url_for('.create_download_file')}}" hx-target="#download"> 
+                    <label for="username" class="form-label">Please enter your username:</label>
+                    <input type="text" placeholder="Username" name="user" class="mb-3 mt-3 form-control" id="username">
+                    <button type="submit" class='btn btn-primary mb-1 mt-1' >Download Grades</button>
+                    </form>
+                    <div id="download">
+                        {% for message in get_flashed_messages() %}
+                        <div class='alert alert-primary mb-3 mt-3' role='alert'>{{ message }}</div>
+                        {% endfor %}
+                    </div>
             </div>
         </div>
 

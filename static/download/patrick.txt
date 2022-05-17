@@ -1,0 +1,86 @@
+[
+    {
+        "assignments_projects": 0.0,
+        "course_name": "COMM 1116",
+        "date": "05/13/22",
+        "final": 25.5,
+        "lab": 0.0,
+        "midterm": 25.5,
+        "participation": 8.5,
+        "presentations": 17.0,
+        "quiz": 7.802,
+        "total": 84.3
+    },
+    {
+        "assignments_projects": 40.0,
+        "course_name": "ACIT 2620",
+        "date": "05/15/22",
+        "final": 20.0,
+        "lab": 9.0,
+        "midterm": 12.0,
+        "participation": 0.0,
+        "presentations": 0.0,
+        "quiz": 10.0,
+        "total": 91.0
+    },
+    {
+        "assignments_projects": 36.0,
+        "course_name": "ACIT 4770",
+        "date": "05/14/22",
+        "final": 0.0,
+        "lab": 0.0,
+        "midterm": 0.0,
+        "participation": 20.0,
+        "presentations": 0.0,
+        "quiz": 40.0,
+        "total": 96.0
+    },
+    {
+        "assignments_projects": 27.0,
+        "course_name": "ACIT 2831",
+        "date": "05/15/22",
+        "final": 20.0,
+        "lab": 20.0,
+        "midterm": 25.0,
+        "participation": 0.0,
+        "presentations": 0.0,
+        "quiz": 0.0,
+        "total": 92.0
+    },
+    {
+        "assignments_projects": 40.0,
+        "course_name": "ACIT 2811",
+        "date": "05/15/22",
+        "final": 8.0,
+        "lab": 18.0,
+        "midterm": 0.0,
+        "participation": 0.0,
+        "presentations": 0.0,
+        "quiz": 30.0,
+        "total": 96.0
+    },
+    {
+        "assignments_projects": 13.5,
+        "course_name": "ACIT 2911",
+        "date": "05/15/22",
+        "final": 36.0,
+        "lab": 0.0,
+        "midterm": 30.0,
+        "participation": 0.0,
+        "presentations": 0.0,
+        "quiz": 15.0,
+        "total": 94.5
+    },
+    {
+        "assignments_projects": 20.0,
+        "course_name": "ACIT 2520",
+        "date": "05/15/22",
+        "final": 20.0,
+        "lab": 16.0,
+        "midterm": 16.0,
+        "participation": 0.0,
+        "presentations": 0.0,
+        "quiz": 18.0,
+        "total": 90.0
+    }
+]

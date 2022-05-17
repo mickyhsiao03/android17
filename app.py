@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, flash, send_from_directory
 from calculate import *
 
 app = Flask(__name__)
@@ -24,7 +24,8 @@ def option():
 
 @app.route("/calculate_grade", methods = ["POST"])
 def calculate_post():
-
+    global username
+    username = request.form['user']
     blank_dict = dict.fromkeys(["quiz", "lab", "assignments_projects", "presentations", "participation", "midterm", "final"], 0)
 
     for key in request.form.keys():
@@ -41,6 +42,8 @@ def calculate_post():
 @app.route("/show_results", methods = ["POST"])
 def results():
     try:
+        global username
+        username = request.form['user']
         with open(f"./users/{request.form['user']}.json") as file:
             data = json.load(file)
             data.sort(key=lambda x:x["total"], reverse=True)
@@ -54,6 +57,25 @@ def results():
         return returned_table
     except FileNotFoundError:
         return "<h4>Please enter a valid username.</h4><h6 class='text-muted'>Please ensure there is at least one grade calculation for your username.</h6>"
+
+@app.route("/download_file", methods = ["POST", "GET"])
+def create_download_file():
+    try:
+        global username
+        print(username)
+        f = open('./users/{0}.json'.format(username), "r")
+        data = json.loads(f.read())
+        with open('./static/download/{0}.txt'.format(username), 'w') as f:
+            json.dump(data, f, indent=4, sort_keys=True)
+        filename = '{0}.txt'.format(username)
+        # simp_path = 'demo/which_path.docx'
+        abs_path = os.path.abspath("./static/download")
+        print(abs_path)
+        username = ''
+        return send_from_directory(abs_path, filename, as_attachment=True)  
+    except:
+        message = flash ("Please Check Grade history atleast once!")
+        return render_template("index.html", courses=get_all_courses()) 
 
 if __name__ == "__main__":
     app.run(port=6969,debug=True)
