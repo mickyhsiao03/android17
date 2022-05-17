@@ -39,7 +39,7 @@ def calculate_post():
 
 
         return (f"<div class='alert alert-primary mb-3 mt-3' role='alert'> Your final grade for {request.form['course_selection']} is {int(final_calculated_grade['total'])}% </div>")
-    except ValueError:
+    except (ValueError, FileNotFoundError):
         return "<h4>Please enter a valid username.</h4><h6 class='text-muted'>Please ensure there is at least one grade calculation for your username.</h6>"
 
 
