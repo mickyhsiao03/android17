@@ -28,7 +28,7 @@ def validate(*args):
                 raise ValueError
 
 
-def calculate(user_name, course, quiz, lab, assignment, presentation, participation, midterm, final):
+def calculate(user_name, course, quiz, lab, assignments_projects, presentations, participation, midterm, final):
     validate([i for i in locals().values()])
     if course not in get_all_courses():
         raise FileNotFoundError
@@ -36,8 +36,8 @@ def calculate(user_name, course, quiz, lab, assignment, presentation, participat
         course_dict = get_course_by_name(course)
         quiz_mark = quiz * (course_dict['quiz']/100)
         lab_mark = lab * (course_dict['lab']/100)
-        assignment_mark = assignment * (course_dict['assignments_projects']/100)
-        presentation_mark = presentation * (course_dict['presentations']/100)
+        assignment_mark = assignments_projects * (course_dict['assignments_projects']/100)
+        presentation_mark = presentations * (course_dict['presentations']/100)
         participation_mark = participation * (course_dict['participation']/100)
         midterm_mark = midterm * (course_dict['midterm']/100)
         final_mark = final * (course_dict['final']/100)
@@ -105,9 +105,9 @@ def update_json_file(username, today, course, quiz, lab, assignment, presentatio
         return data
 
 
-def write_data(user_name, course, quiz_mark, lab_mark, assignment_mark, presentation_mark, participation_mark, midterm_mark, final_mark, total_mark):
+def write_data(user, course, quiz, lab, assignment, presentation, participation, midterm, final, total):
     today = date.today()
-    if not os.path.exists("./users/{0}.json".format(user_name)):
+    if not os.path.exists("./users/{0}.json".format(user)):
         create_json = [{
                             "course_name": "",
                             "quiz": 0,
@@ -120,13 +120,13 @@ def write_data(user_name, course, quiz_mark, lab_mark, assignment_mark, presenta
                             "total": 0,
                             "date": ""
                         }]
-        with open("./users/{0}.json".format(user_name), 'w') as f:
+        with open("./users/{0}.json".format(user), 'w') as f:
             json.dump(create_json, f, indent=4)
-        update_json_file(user_name, today, course, quiz_mark, lab_mark, assignment_mark, 
-        presentation_mark, participation_mark, midterm_mark, final_mark, total_mark)
+        update_json_file(user, today, course, quiz, lab, assignment, 
+        presentation, participation, midterm, final, total)
         return "JSON Created & Updated"
     else:
-        update_json_file(user_name, today, course, quiz_mark, lab_mark, assignment_mark, 
-        presentation_mark, participation_mark, midterm_mark, final_mark, total_mark)
+        update_json_file(user, today, course, quiz, lab, assignment, 
+        presentation, participation, midterm, final, total)
 
     return "JSON successfully updated"
