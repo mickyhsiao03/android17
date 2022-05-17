@@ -7,9 +7,13 @@ def calculate_GPA(user_name):
     with open("./users/{0}.json".format(user_name), 'r+') as f:
         file_data = json.load(f)
         earned_list = {}
+        complete_list = {}
         for i in file_data:
+            complete_list[i['course_name']] = i['total']
             if i['total'] >= 50:
                 earned_list[i['course_name']] = i['total']
+
+
     with open("courses.json", 'r') as f:
         file_data = json.load(f)
         grades = []
@@ -17,8 +21,11 @@ def calculate_GPA(user_name):
         for course in file_data:
             for i in earned_list:
                 if course['course_name'] == i:
-                    credits.append(course['credit'])
                     grades.append(course['credit']*earned_list[i])
+            for i in complete_list:
+                if course['course_name'] ==i:
+                    credits.append(course['credit'])
+
     GPA = sum(grades)/sum(credits)
     return GPA
 

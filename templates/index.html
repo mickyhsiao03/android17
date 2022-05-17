@@ -46,12 +46,15 @@
                     <div id="dynamic-form"></div>
                     <input type='submit' value='Calculate Grade' class='btn btn-primary mb-1 mt-1'/>  
                 </form>
+                <button hx-target="#results" class='btn btn-primary mb-1 mt-1' hx-post="/calculate_GPA" hx-include="[name='user']">Calculate GPA</button>
+
                 <div id="results"></div>
             </div>
 
             <div class="col border border-primary">
                 <h1>Calculation History</h1>
                 <button hx-target="#json" class='btn btn-primary mb-1 mt-1' hx-post="/show_results" hx-include="[name='user']">See Results</button>
+
                 <div id="json"></div>
             </div>
         </div>

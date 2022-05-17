@@ -1,62 +1,38 @@
 [
     {
-        "course_name": "ACIT 2420",
-        "quiz": 10.0,
+        "course_name": "ACIT 1420",
+        "quiz": 15.0,
         "lab": 20.0,
-        "assignments_projects": 20.0,
-        "presentations": 0.0,
-        "participation": 0.0,
-        "midterm": 25.0,
+        "assignments_projects": 0.0,
+        "presentations": 10.0,
+        "participation": 15.0,
+        "midterm": 15.0,
         "final": 25.0,
         "total": 100.0,
-        "date": "05/14/22"
+        "date": "05/17/22"
     },
     {
-        "course_name": "MATH 1310",
-        "quiz": 7.5,
+        "course_name": "ORGB 1100",
+        "quiz": 0.0,
         "lab": 7.5,
-        "assignments_projects": 15.0,
-        "presentations": 0.0,
-        "participation": 0.0,
-        "midterm": 30.0,
-        "final": 40.0,
-        "total": 100.0,
-        "date": "05/14/22"
-    },
-    {
-        "course_name": "ACIT 3910",
-        "quiz": 10.0,
-        "lab": 20.0,
-        "assignments_projects": 15.0,
-        "presentations": 0.0,
+        "assignments_projects": 9.0,
+        "presentations": 6.0,
         "participation": 5.0,
-        "midterm": 20.0,
-        "final": 30.0,
-        "total": 100.0,
-        "date": "05/14/22"
+        "midterm": 12.5,
+        "final": 15.0,
+        "total": 55.0,
+        "date": "05/17/22"
     },
     {
         "course_name": "ACIT 2520",
-        "quiz": 14.0,
-        "lab": 14.0,
-        "assignments_projects": 14.0,
+        "quiz": 0.4,
+        "lab": 0.4,
+        "assignments_projects": 0.4,
         "presentations": 0.0,
         "participation": 0.0,
-        "midterm": 14.0,
-        "final": 14.0,
-        "total": 70.0,
-        "date": "05/14/22"
-    },
-    {
-        "course_name": "ACIT 3420",
-        "quiz": 0.2,
-        "lab": 0.25,
-        "assignments_projects": 0.0,
-        "presentations": 0.1,
-        "participation": 0.15,
-        "midterm": 0.0,
-        "final": 0.3,
-        "total": 1.0,
-        "date": "05/14/22"
+        "midterm": 0.4,
+        "final": 0.4,
+        "total": 2.0,
+        "date": "05/17/22"
     }
 ]
