@@ -3,6 +3,19 @@ from calculate import *
 
 app = Flask(__name__)
 
+formatting_dict = {
+    "course_name": "Course Name",
+    "quiz": "Quiz",
+    "lab": "Lab",
+    "assignments_projects": "Assignments & Projects",
+    "presentations": "Presentations",
+    "participation": "Participation",
+    "midterm": "Midterm",
+    "final": "Final",
+    "total": "Total Grade",
+    "date": "Date Calculated"
+}
+
 @app.route("/")
 def homepage():
     return render_template("index.html", courses=get_all_courses())
@@ -17,7 +30,7 @@ def option():
         course_dict = get_course_by_name(selected_course)
         for key in course_dict:
             if (course_dict[key] != 0) and (key != "credit") and (key != "course_name"):
-                returned_form += f"<div class='mb-3 mt-3'><input type='number' step='0.01' min=0 max=100 name='{key}' placeholder='{key}' class='form-control'/>"
+                returned_form += f"<div class='mb-3 mt-3'><input type='number' step='0.01' min=0 max=100 name='{key}' placeholder='{formatting_dict[key]}' class='form-control'/>"
                 returned_form += f"<div class='form-text'>Weight = {course_dict[key]}%</div>"
         return returned_form
 
@@ -61,13 +74,21 @@ def downloadredir():
 @app.route("/download_file", methods = ["GET"])
 def create_download_file():
         username = request.args["user"]
-        f = open('./users/{0}.json'.format(username), "r")
+        f = open(f'./users/{username}.json', "r")
         data = json.load(f)
         with open('./static/download/{0}.txt'.format(username), 'w') as f:
             for i in data:
-                f.write("Course Name: "+ i["course_name"] + "\n" + "Quiz: "+ str(i["quiz"])+ "\n" + "Lab: " + str(i["lab"])+ "\n" + "Assignment Projects: "+ str(i["assignments_projects"])+ "\n"+ "Presentations: "+ str(i["presentations"])+ "\n"
-                        "Participation: "+ str(i["participation"])+ "\n" + "Midterm: " + str(i["midterm"]) + "\n" + "Final: " + str(i["final"]) + "\n" + "Date Calculated: " + str(i["date"]) + "\n \n \n \n")
-        filename = '{0}.txt'.format(username)
+                to_write = ""
+                to_write += ("----------------------------------------")
+                for key in i:
+                    if i[key] != 0:
+                        to_write += f"\n{formatting_dict[key]}: {str(i[key])}"
+                        if type(i[key]) is float:
+                            to_write += "%"
+                to_write += "\n----------------------------------------\n\n"
+                f.write(to_write)
+
+        filename = f'{username}.txt'
         abs_path = os.path.abspath("./static/download")
         return send_from_directory(abs_path, filename, as_attachment=True)  
 
