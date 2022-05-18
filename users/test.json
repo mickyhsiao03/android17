@@ -142,5 +142,17 @@
         "final": 30.0,
         "total": 98.0,
         "date": "05/14/22"
+    },
+    {
+        "course_name": "ACIT 4640",
+        "quiz": 0.0,
+        "lab": 0.0,
+        "assignments_projects": 0.0,
+        "presentations": 0.0,
+        "participation": 40.0,
+        "midterm": 0.0,
+        "final": 54.0,
+        "total": 94.0,
+        "date": "05/17/22"
     }
 ]

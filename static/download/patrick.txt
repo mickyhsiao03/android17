@@ -154,3 +154,15 @@ Date Calculated: 05/17/22
  
  
  
+Course Name: ACIT 3640
+Quiz: 20.0
+Lab: 0.0
+Assignment Projects: 36.0
+Presentations: 0.0
+Participation: 20.0
+Midterm: 0.0
+Final: 16.0
+Date Calculated: 05/17/22
+ 
+ 
+ 
