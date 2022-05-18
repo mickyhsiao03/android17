@@ -27,20 +27,8 @@
 
         <div class="row border border-primary">
             <div class="col border border-primary">
-                    <form action="{{ url_for('.create_download_file')}}" hx-target="#download"> 
                     <label for="username" class="form-label">Please enter your username:</label>
                     <input type="text" placeholder="Username" name="user" class="mb-3 mt-3 form-control" id="username">
-                    <button type="submit" class='btn btn-primary mb-1 mt-1' >Download Grades</button>
-                    </form>
-                    <div id="download">
-                        
-                        <div class='alert alert-primary mb-3 mt-3' role='alert'>
-                            {% for message in get_flashed_messages() %}
-                                {{ message }}
-                            {% endfor %}
-                        </div>
-                        
-                    </div>
             </div>
         </div>
 
@@ -50,7 +38,7 @@
                 <form hx-post="/calculate_grade" hx-target="#results" hx-include="[name='user']">
                     <label for="dropdown" class="form-label">Please select a course:</label>
                     <select class="btn btn-secondary dropdown-toggle form-control" name="course_selection" hx-get="/option" hx-target="#dynamic-form" id="dropdown">
-                        <option value="none" selected>--- SELECT A COURSE --- </option>
+                        <option value="none" selected>--- SELECT A COURSE ---</option>
                         {% for n in courses %}
                             <option value="{{n}}" name="{{n}}">{{n}}</option>
                         {% endfor %}
@@ -64,7 +52,9 @@
             <div class="col border border-primary">
                 <h1>Calculation History</h1>
                 <button hx-target="#json" class='btn btn-primary mb-1 mt-1' hx-post="/show_results" hx-include="[name='user']">See Results</button>
-                <div id="json"></div>
+                <div id="json">
+                    
+                </div>
             </div>
         </div>
 
@@ -84,6 +74,7 @@
             window.onload = () => {
                 darkmode.inDarkMode = false
             }
+
         </script>
     </body>
 </html>

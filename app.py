@@ -1,8 +1,7 @@
-from flask import Flask, render_template, request, jsonify, flash, send_from_directory
+from flask import Flask, render_template, request, send_from_directory, Response, url_for
 from calculate import *
 
 app = Flask(__name__)
-app.secret_key = "secret"
 
 @app.route("/")
 def homepage():
@@ -24,8 +23,6 @@ def option():
 
 @app.route("/calculate_grade", methods = ["POST"])
 def calculate_post():
-    global username
-    username = request.form['user']
     blank_dict = dict.fromkeys(["quiz", "lab", "assignments_projects", "presentations", "participation", "midterm", "final"], 0)
 
     for key in request.form.keys():
@@ -33,37 +30,37 @@ def calculate_post():
             blank_dict[key] = float(request.form[key])
 
     final_calculated_grade = calculate(request.form["user"],request.form["course_selection"],**blank_dict)
-    
     write_data(**final_calculated_grade,course=request.form["course_selection"])
-    
     return (f"<div class='alert alert-primary mb-3 mt-3' role='alert'> Your final grade for {request.form['course_selection']} is {int(final_calculated_grade['total'])}% </div>")
 
 
 @app.route("/show_results", methods = ["POST"])
 def results():
     try:
-        global username
-        username = request.form['user']
         with open(f"./users/{request.form['user']}.json") as file:
             data = json.load(file)
             data.sort(key=lambda x:x["total"], reverse=True)
-        returned_table = "<table class='table'>"
+        returned_table = ""
+        returned_table += f"<button class='btn btn-primary mb-1 mt-1' hx-get='{url_for('downloadredir')}' hx-include=\"[name='user']\">Download Grades</button>"
+        returned_table += "<table class='table'>"
         returned_table += "<thead><tr><th scope='col'>Course</th><th scope='col'>Final Grade</th><th scope='col'>Date Calculated</th></tr></thead>"
         returned_table += "<tbody>"
         for i in data:
             returned_table += f"<tr><td>{i['course_name']}</td"
             returned_table += f"<tr><td>{i['total']}%</td>"
             returned_table += f"<td>{i['date']}</td></tr>"
-        returned_table += " </tbody></table>"
+        returned_table += "</tbody></table>"
         return returned_table
     except FileNotFoundError:
         return "<h4>Please enter a valid username.</h4><h6 class='text-muted'>Please ensure there is at least one grade calculation for your username.</h6>"
 
-@app.route("/download_file", methods = ["POST", "GET"])
+@app.route("/downloadredir", methods = ["GET"])
+def downloadredir():
+    return Response(headers={"HX-Redirect": f"/download_file?user={request.args['user']}"})
+
+@app.route("/download_file", methods = ["GET"])
 def create_download_file():
-    try:
-        global username
-        print(username)
+        username = request.args["user"]
         f = open('./users/{0}.json'.format(username), "r")
         data = json.load(f)
         with open('./static/download/{0}.txt'.format(username), 'w') as f:
@@ -71,14 +68,8 @@ def create_download_file():
                 f.write("Course Name: "+ i["course_name"] + "\n" + "Quiz: "+ str(i["quiz"])+ "\n" + "Lab: " + str(i["lab"])+ "\n" + "Assignment Projects: "+ str(i["assignments_projects"])+ "\n"+ "Presentations: "+ str(i["presentations"])+ "\n"
                         "Participation: "+ str(i["participation"])+ "\n" + "Midterm: " + str(i["midterm"]) + "\n" + "Final: " + str(i["final"]) + "\n" + "Date Calculated: " + str(i["date"]) + "\n \n \n \n")
         filename = '{0}.txt'.format(username)
-        # simp_path = 'demo/which_path.docx'
         abs_path = os.path.abspath("./static/download")
-        print(abs_path)
-        username = ''
         return send_from_directory(abs_path, filename, as_attachment=True)  
-    except:
-        message = flash ("Please Check Grade History or Calculate Grades at least once!")
-        return render_template("index.html", courses=get_all_courses()) 
 
 if __name__ == "__main__":
     app.run(port=6969,debug=True)
