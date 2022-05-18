@@ -23,6 +23,10 @@ jobs:
         with:
           python-version: '3.9'
       
+      - name: install flask
+        run: sudo apt-get install python3-flask
+        
+      
         
       # Runs a single command using the runners shell
       - name: Run a one-line script
