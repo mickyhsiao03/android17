@@ -92,11 +92,11 @@
                 let num = parseInt(str, 10)
         
                 if (num >= 86) {
-                    image.src="{{ url_for('static', filename='images/green_logo.jpg') }}"
+                    image.src="{{ url_for('static', filename='images/green_logo.png') }}"
                 } else if (num >= 74) {
-                    image.src="{{ url_for('static', filename='images/yellow_logo.jpg') }}"
+                    image.src="{{ url_for('static', filename='images/yellow_logo.png') }}"
                 } else if (num >= 50) {
-                    image.src="{{ url_for('static', filename='images/orange_logo.jpg') }}"
+                    image.src="{{ url_for('static', filename='images/orange_logo.png') }}"
                 } else {
                     image.src="{{ url_for('static', filename='images/logo.png') }}"
                 }
