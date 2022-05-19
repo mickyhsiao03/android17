@@ -3,6 +3,24 @@ import os
 import os.path
 from datetime import date
 
+def delete_entry(user_name, entry):
+    with open("./users/{0}.json".format(user_name), 'r+') as f:
+        file_data = json.load(f)
+        index = 0
+        for i in file_data:
+            if i['course_name'] == entry:
+                print(entry)
+                print(index)
+                file_data.pop(index)
+                f.seek(0)
+                json.dump(file_data, f, indent=4)
+                f.truncate()
+                break
+            else:
+                index += 1
+        print(file_data)
+    return
+
 def calculate_GPA(user_name):
     with open("./users/{0}.json".format(user_name), 'r+') as f:
         file_data = json.load(f)
