@@ -1,10 +1,8 @@
 import pytest
 from datetime import date
 
-from requests_mock import mock
-
 from calculate import *
-from unittest.mock import mock_open, patch, MagicMock
+from unittest.mock import mock_open, patch
 
 
 USER_JSON = """ [
