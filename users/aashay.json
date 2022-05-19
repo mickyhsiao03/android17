@@ -1,0 +1,26 @@
+[
+    {
+        "course_name": "COMM 1116",
+        "quiz": 8.0,
+        "lab": 0.0,
+        "assignments_projects": 0.0,
+        "presentations": 15.0,
+        "participation": 9.0,
+        "midterm": 25.5,
+        "final": 23.4,
+        "total": 80.9,
+        "date": "05/17/22"
+    },
+    {
+        "course_name": "ACIT 2515",
+        "quiz": 0.0,
+        "lab": 0.0,
+        "assignments_projects": 0.0,
+        "presentations": 0.0,
+        "participation": 0.0,
+        "midterm": 0.0,
+        "final": 0.0,
+        "total": 0.0,
+        "date": "05/17/22"
+    }
+]

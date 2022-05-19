@@ -1,0 +1,22 @@
+----------------------------------------
+Course Name: ACIT 1515
+Quiz: 20.0%
+Lab: 16.0%
+Participation: 8.0%
+Midterm: 20.0%
+Final: 20.0%
+Total Grade: 84.0%
+Date Calculated: 05/19/22
+----------------------------------------
+
+----------------------------------------
+Course Name: MATH 1310
+Quiz: 3.75%
+Lab: 6.0%
+Assignments & Projects: 12.0%
+Midterm: 24.0%
+Final: 32.0%
+Total Grade: 77.75%
+Date Calculated: 05/19/22
+----------------------------------------
+
