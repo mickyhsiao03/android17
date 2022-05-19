@@ -1,0 +1,144 @@
+----------------------------------------
+Course Name: COMM 1116
+Quiz: 7.802%
+Presentations: 17.0%
+Participation: 8.5%
+Midterm: 25.5%
+Final: 25.5%
+Total Grade: 84.3%
+Date Calculated: 05/13/22
+----------------------------------------
+
+----------------------------------------
+Course Name: ACIT 2620
+Quiz: 10.0%
+Lab: 9.0%
+Assignments & Projects: 40.0%
+Midterm: 12.0%
+Final: 20.0%
+Total Grade: 91.0%
+Date Calculated: 05/15/22
+----------------------------------------
+
+----------------------------------------
+Course Name: ACIT 4770
+Quiz: 40.0%
+Assignments & Projects: 36.0%
+Participation: 20.0%
+Total Grade: 96.0%
+Date Calculated: 05/14/22
+----------------------------------------
+
+----------------------------------------
+Course Name: ACIT 2831
+Lab: 20.0%
+Assignments & Projects: 27.0%
+Midterm: 25.0%
+Final: 20.0%
+Total Grade: 92.0%
+Date Calculated: 05/15/22
+----------------------------------------
+
+----------------------------------------
+Course Name: ACIT 2811
+Quiz: 30.0%
+Lab: 18.0%
+Assignments & Projects: 40.0%
+Final: 8.0%
+Total Grade: 96.0%
+Date Calculated: 05/15/22
+----------------------------------------
+
+----------------------------------------
+Course Name: ACIT 2911
+Quiz: 15.0%
+Assignments & Projects: 13.5%
+Midterm: 30.0%
+Final: 36.0%
+Total Grade: 94.5%
+Date Calculated: 05/15/22
+----------------------------------------
+
+----------------------------------------
+Course Name: ACIT 2520
+Quiz: 18.0%
+Lab: 16.0%
+Assignments & Projects: 20.0%
+Midterm: 16.0%
+Final: 20.0%
+Total Grade: 90.0%
+Date Calculated: 05/15/22
+----------------------------------------
+
+----------------------------------------
+Course Name: ACIT 3475
+Quiz: 17.8%
+Lab: 39.0%
+Final: 27.0%
+Total Grade: 83.8%
+Date Calculated: 05/17/22
+----------------------------------------
+
+----------------------------------------
+Course Name: ACIT 1515
+Quiz: 18.0%
+Lab: 9.0%
+Participation: 6.7%
+Midterm: 22.5%
+Final: 22.5%
+Total Grade: 78.7%
+Date Calculated: 05/17/22
+----------------------------------------
+
+----------------------------------------
+Course Name: COMM 2216
+Quiz: 9.0%
+Lab: 18.0%
+Assignments & Projects: 27.0%
+Midterm: 18.0%
+Final: 18.0%
+Total Grade: 90.0%
+Date Calculated: 05/17/22
+----------------------------------------
+
+----------------------------------------
+Course Name: ACIT 2515
+Assignments & Projects: 33.5%
+Midterm: 13.4%
+Final: 20.099999999999998%
+Total Grade: 67.0%
+Date Calculated: 05/17/22
+----------------------------------------
+
+----------------------------------------
+Course Name: ACIT 3420
+Quiz: 15.600000000000001%
+Lab: 19.5%
+Presentations: 7.800000000000001%
+Participation: 11.7%
+Final: 23.4%
+Total Grade: 78.0%
+Date Calculated: 05/17/22
+----------------------------------------
+
+----------------------------------------
+Course Name: ACIT 1620
+Quiz: 8.9%
+Lab: 17.8%
+Assignments & Projects: 17.8%
+Midterm: 17.8%
+Final: 26.7%
+Total Grade: 89.0%
+Date Calculated: 05/17/22
+----------------------------------------
+
+----------------------------------------
+Course Name: ACIT 3640
+Quiz: 20.0%
+Assignments & Projects: 36.0%
+Participation: 20.0%
+Final: 16.0%
+Total Grade: 92.0%
+Date Calculated: 05/17/22
+----------------------------------------
+

@@ -1,5 +1,16 @@
 [
     {
+
+        "course_name": "ORGB 1100",
+        "quiz": 0.0,
+        "lab": 13.5,
+        "assignments_projects": 13.049999999999999,
+        "presentations": 9.0,
+        "participation": 7.6000000000000005,
+        "midterm": 20.5,
+        "final": 20.0,
+        "total": 83.65,
+
         "course_name": "ACIT 1420",
         "quiz": 15.0,
         "lab": 20.0,
@@ -45,6 +56,7 @@
         "midterm": 3.4499999999999997,
         "final": 5.75,
         "total": 23.0,
+
         "date": "05/17/22"
     }
 ]

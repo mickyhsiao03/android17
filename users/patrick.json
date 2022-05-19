@@ -82,5 +82,89 @@
         "final": 20.0,
         "total": 90.0,
         "date": "05/15/22"
+    },
+    {
+        "course_name": "ACIT 3475",
+        "quiz": 17.8,
+        "lab": 39.0,
+        "assignments_projects": 0.0,
+        "presentations": 0.0,
+        "participation": 0.0,
+        "midterm": 0.0,
+        "final": 27.0,
+        "total": 83.8,
+        "date": "05/17/22"
+    },
+    {
+        "course_name": "ACIT 1515",
+        "quiz": 18.0,
+        "lab": 9.0,
+        "assignments_projects": 0.0,
+        "presentations": 0.0,
+        "participation": 6.7,
+        "midterm": 22.5,
+        "final": 22.5,
+        "total": 78.7,
+        "date": "05/17/22"
+    },
+    {
+        "course_name": "COMM 2216",
+        "quiz": 9.0,
+        "lab": 18.0,
+        "assignments_projects": 27.0,
+        "presentations": 0.0,
+        "participation": 0.0,
+        "midterm": 18.0,
+        "final": 18.0,
+        "total": 90.0,
+        "date": "05/17/22"
+    },
+    {
+        "course_name": "ACIT 2515",
+        "quiz": 0.0,
+        "lab": 0.0,
+        "assignments_projects": 33.5,
+        "presentations": 0.0,
+        "participation": 0.0,
+        "midterm": 13.4,
+        "final": 20.099999999999998,
+        "total": 67.0,
+        "date": "05/17/22"
+    },
+    {
+        "course_name": "ACIT 3420",
+        "quiz": 15.600000000000001,
+        "lab": 19.5,
+        "assignments_projects": 0.0,
+        "presentations": 7.800000000000001,
+        "participation": 11.7,
+        "midterm": 0.0,
+        "final": 23.4,
+        "total": 78.0,
+        "date": "05/17/22"
+    },
+    {
+        "course_name": "ACIT 1620",
+        "quiz": 8.9,
+        "lab": 17.8,
+        "assignments_projects": 17.8,
+        "presentations": 0.0,
+        "participation": 0.0,
+        "midterm": 17.8,
+        "final": 26.7,
+        "total": 89.0,
+        "date": "05/17/22"
+    },
+    {
+        "course_name": "ACIT 3640",
+        "quiz": 20.0,
+        "lab": 0.0,
+        "assignments_projects": 36.0,
+        "presentations": 0.0,
+        "participation": 20.0,
+        "midterm": 0.0,
+        "final": 16.0,
+        "total": 92.0,
+        "date": "05/17/22"
     }
 ]

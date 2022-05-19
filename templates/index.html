@@ -27,8 +27,8 @@
 
         <div class="row border border-primary">
             <div class="col border border-primary">
-                <label for="username" class="form-label">Please enter your username:</label>
-                <input type="text" placeholder="Username" name="user" class="mb-3 mt-3 form-control" id="username">
+                    <label for="username" class="form-label">Please enter your username:</label>
+                    <input type="text" placeholder="Username" name="user" class="mb-3 mt-3 form-control" id="username">
             </div>
         </div>
 
@@ -38,7 +38,7 @@
                 <form hx-post="/calculate_grade" hx-target="#results" hx-include="[name='user']">
                     <label for="dropdown" class="form-label">Please select a course:</label>
                     <select class="btn btn-secondary dropdown-toggle form-control" name="course_selection" hx-get="/option" hx-target="#dynamic-form" id="dropdown">
-                        <option value="none" selected>--- SELECT A COURSE --- </option>
+                        <option value="none" selected>--- SELECT A COURSE ---</option>
                         {% for n in courses %}
                             <option value="{{n}}" name="{{n}}">{{n}}</option>
                         {% endfor %}
@@ -56,6 +56,7 @@
                 <button hx-target="#json" class='btn btn-primary mb-1 mt-1' hx-post="/show_results" hx-include="[name='user']">See Results</button>
 
                 <div id="json"></div>
+
             </div>
         </div>
 
@@ -75,6 +76,7 @@
             window.onload = () => {
                 darkmode.inDarkMode = false
             }
+
 
 
             let btn = document.getElementById("btn")
@@ -102,6 +104,7 @@
                 }
                 time_out = setTimeout(doubleClick, 100);
             })
+
         </script>
     </body>
 
