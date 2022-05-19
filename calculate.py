@@ -3,6 +3,49 @@ import os
 import os.path
 from datetime import date
 
+def delete_entry(user_name, entry):
+    with open("./users/{0}.json".format(user_name), 'r+') as f:
+        file_data = json.load(f)
+        index = 0
+        for i in file_data:
+            if i['course_name'] == entry:
+                print(entry)
+                print(index)
+                file_data.pop(index)
+                f.seek(0)
+                json.dump(file_data, f, indent=4)
+                f.truncate()
+                break
+            else:
+                index += 1
+        print(file_data)
+    return
+
+def calculate_GPA(user_name):
+    with open("./users/{0}.json".format(user_name), 'r+') as f:
+        file_data = json.load(f)
+        earned_list = {}
+        complete_list = {}
+        for i in file_data:
+            complete_list[i['course_name']] = i['total']
+            if i['total'] >= 50:
+                earned_list[i['course_name']] = i['total']
+
+
+    with open("courses.json", 'r') as f:
+        file_data = json.load(f)
+        grades = []
+        credits = []
+        for course in file_data:
+            for i in earned_list:
+                if course['course_name'] == i:
+                    grades.append(course['credit']*earned_list[i])
+            for i in complete_list:
+                if course['course_name'] ==i:
+                    credits.append(course['credit'])
+
+    GPA = sum(grades)/sum(credits)
+    return GPA
 
 def get_course_by_name(course):
     with open("courses.json") as f:

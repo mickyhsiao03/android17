@@ -1,5 +1,6 @@
 [
     {
+
         "course_name": "ORGB 1100",
         "quiz": 0.0,
         "lab": 13.5,
@@ -9,6 +10,53 @@
         "midterm": 20.5,
         "final": 20.0,
         "total": 83.65,
+
+        "course_name": "ACIT 1420",
+        "quiz": 15.0,
+        "lab": 20.0,
+        "assignments_projects": 0.0,
+        "presentations": 10.0,
+        "participation": 15.0,
+        "midterm": 15.0,
+        "final": 25.0,
+        "total": 100.0,
+        "date": "05/17/22"
+    },
+    {
+        "course_name": "ORGB 1100",
+        "quiz": 0.0,
+        "lab": 7.5,
+        "assignments_projects": 9.0,
+        "presentations": 6.0,
+        "participation": 5.0,
+        "midterm": 12.5,
+        "final": 15.0,
+        "total": 55.0,
+        "date": "05/17/22"
+    },
+    {
+        "course_name": "ACIT 2520",
+        "quiz": 0.4,
+        "lab": 0.4,
+        "assignments_projects": 0.4,
+        "presentations": 0.0,
+        "participation": 0.0,
+        "midterm": 0.4,
+        "final": 0.4,
+        "total": 2.0,
+        "date": "05/17/22"
+    },
+    {
+        "course_name": "ACIT 2620",
+        "quiz": 2.3000000000000003,
+        "lab": 2.3000000000000003,
+        "assignments_projects": 9.200000000000001,
+        "presentations": 0.0,
+        "participation": 0.0,
+        "midterm": 3.4499999999999997,
+        "final": 5.75,
+        "total": 23.0,
+
         "date": "05/17/22"
     }
 ]

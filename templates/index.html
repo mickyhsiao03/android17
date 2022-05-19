@@ -14,7 +14,7 @@
         <div class="jumbotron jumbotron-fluid mb-3 mt-3">
             <div class="container justify-content-center d-flex">
                 <div>
-                    <img class="img-fluid" src="{{ url_for('static', filename='images/logo.png') }}" alt="Passulator, CIT Grade Calculator Logo" width="400" height="200">
+                    <img class="img-fluid" id="logo" src="{{ url_for('static', filename='images/logo.png') }}" alt="Passulator, CIT Grade Calculator Logo" width="400" height="200">
                     <p class="lead container justify-content-center d-flex">CIT Course Grade & GPA Calculator</p>
                 </div>
             </div>
@@ -44,17 +44,19 @@
                         {% endfor %}
                     </select>
                     <div id="dynamic-form"></div>
-                    <input type='submit' value='Calculate Grade' class='btn btn-primary mb-1 mt-1'/>  
+                    <input type='submit' id="btn" value='Calculate Grade' class='btn btn-primary mb-1 mt-1'/>  
                 </form>
+                <button hx-target="#results" class='btn btn-primary mb-1 mt-1' hx-post="/calculate_GPA" hx-include="[name='user']">Calculate GPA</button>
+
                 <div id="results"></div>
             </div>
 
             <div class="col border border-primary">
                 <h1>Calculation History</h1>
                 <button hx-target="#json" class='btn btn-primary mb-1 mt-1' hx-post="/show_results" hx-include="[name='user']">See Results</button>
-                <div id="json">
-                    
-                </div>
+
+                <div id="json"></div>
+
             </div>
         </div>
 
@@ -75,6 +77,35 @@
                 darkmode.inDarkMode = false
             }
 
+
+
+            let btn = document.getElementById("btn")
+            let image = document.getElementById("logo")
+            let time_out
+
+            function doubleClick() {
+                btn.click()
+                clearTimeout(time_out)
+            }
+
+            btn.addEventListener("click", function() {
+                let grade = document.getElementById("results").innerText
+                let str = grade.slice(34, 38)
+                let num = parseInt(str, 10)
+        
+                if (num >= 86) {
+                    image.src="{{ url_for('static', filename='images/green_logo.png') }}"
+                } else if (num >= 74) {
+                    image.src="{{ url_for('static', filename='images/yellow_logo.png') }}"
+                } else if (num >= 50) {
+                    image.src="{{ url_for('static', filename='images/orange_logo.png') }}"
+                } else {
+                    image.src="{{ url_for('static', filename='images/logo.png') }}"
+                }
+                time_out = setTimeout(doubleClick, 100);
+            })
+
         </script>
     </body>
+
 </html>

@@ -1,8 +1,10 @@
 import pytest
 from datetime import date
 
+from requests_mock import mock
+
 from calculate import *
-from unittest.mock import mock_open, patch
+from unittest.mock import mock_open, patch, MagicMock
 
 
 USER_JSON = """ [
@@ -49,6 +51,37 @@ UPDATED_JSON = """[
     }
 ]"""
 
+GPA_JSON = """
+[
+    {
+        "course_name": "ACIT 1420",
+        "quiz": 7.5,
+        "lab": 20.0,
+        "assignments_projects": 0.0,
+        "presentations": 0.0,
+        "participation": 0.0,
+        "midterm": 0.0,
+        "final": 0.0,
+        "total": 27.5,
+        "date": "05/18/22",
+        "credit": 4
+    },
+    {
+        "course_name": "MATH 1310",
+        "quiz": 7.5,
+        "lab": 6.75,
+        "assignments_projects": 12.0,
+        "presentations": 0.0,
+        "participation": 0.0,
+        "midterm": 30.0,
+        "final": 36.0,
+        "total": 92.25,
+        "date": "05/14/22",
+        "credit": 4
+    }
+]
+
+"""
 
 
 
@@ -178,3 +211,12 @@ def test_update_existing_course(mock_file):
     assert result[-1]["final"] == 1
     assert result[-1]["total"] == 7
     assert result[-1]["date"] == "05/12/22"
+
+@patch("builtins.open", new_callable=mock_open, read_data=GPA_JSON)
+def test_calculate_gpa(mock_file):
+    assert calculate_GPA("test") == 46.125
+
+    
+
+
+
