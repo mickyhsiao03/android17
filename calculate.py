@@ -16,7 +16,7 @@ def delete_entry(user_name, entry):
                 break
             else:
                 index += 1
-    return
+    return f"{entry} has been deleted for {user_name}"
 
 def calculate_GPA(user_name):
     with open("./users/{0}.json".format(user_name), 'r+') as f:

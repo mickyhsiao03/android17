@@ -220,8 +220,7 @@ def test_update_existing_course(mock_file):
 def test_calculate_gpa(mock_file):
     assert calculate_GPA("test") == 46.125
 
-    
-
-
-
-
+@patch("builtins.open", new_callable=mock_open, read_data=GPA_JSON)
+def test_delete_entry(mock_file):
+    assert delete_entry("test", "ACIT 1420") == "ACIT 1420 has been deleted for test"
+    assert delete_entry("test", "MATH 1350") == "MATH 1350 has been deleted for test"
