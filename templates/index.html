@@ -103,9 +103,34 @@
                     image.src="{{ url_for('static', filename='images/logo.png') }}"
                 }
                 time_out = setTimeout(doubleClick, 100);
-            })
+            });
 
         </script>
+
+        <script>
+            var xhr = null;
+                getXmlHttpRequestObject = function () {
+                    if (!xhr) {
+                        // Create a new XMLHttpRequest object 
+                        xhr = new XMLHttpRequest();
+                    }
+                    return xhr;
+                };
+            function delete_entry(user_name, course_name){
+                xhr = getXmlHttpRequestObject();
+                xhr.onreadystatechange = deleteCallback;
+                // asynchronous requests
+                xhr.open("POST", "http://localhost:6969/delete_entry", true);
+                // Send the request over the network
+                var formData = [user_name, course_name]
+                xhr.send(formData);
+                document.getElementById(course_name).remove()
+            };
+            function deleteCallback(){
+                console.log(xhr.responseText)
+            }
+        </script>
+
     </body>
 
 </html>

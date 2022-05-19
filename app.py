@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, send_from_directory, Response, url_for
 from calculate import *
+import json
 
 app = Flask(__name__)
 
@@ -60,6 +61,8 @@ def calculate_GPA_form():
         return(f"<div class='alert alert-primary mb-3 mt-3' role='alert'> Your GPA for your saved courses is {round(GPA,2)}% </div>")
     except FileNotFoundError:
         return "<h4>Please enter a valid username.</h4><h6 class='text-muted'>Please ensure there is at least one grade calculation for your username.</h6>"
+    except ZeroDivisionError:
+        return (f"<h4>There are no grades stored for {request.form['user']}</h4> ")
     
 
 
@@ -72,12 +75,13 @@ def results():
         returned_table = ""
         returned_table += f"<button class='btn btn-primary mb-1 mt-1' hx-get='{url_for('downloadredir')}' hx-include=\"[name='user']\">Download Grades</button>"
         returned_table += "<table class='table'>"
-        returned_table += "<thead><tr><th scope='col'>Course</th><th scope='col'>Final Grade</th><th scope='col'>Date Calculated</th></tr></thead>"
+        returned_table += "<thead><tr><th scope='col'>Course</th><th scope='col'>Final Grade</th><th scope='col'>Date Calculated</th><th scope='col'></th></tr></thead>"
         returned_table += "<tbody>"
         for i in data:
-            returned_table += f"<tr><td>{i['course_name']}</td"
-            returned_table += f"<tr><td>{i['total']}%</td>"
-            returned_table += f"<td>{i['date']}</td></tr>"
+            returned_table += f"<tr id='{i['course_name']}'><td>{i['course_name']}</td>"
+            returned_table += f"<td>{i['total']}%</td>"
+            returned_table += f"<td>{i['date']}</td>"
+            returned_table += f"<td><button hx-target='#json' class='btn btn-primary mb-1 mt-1' onclick=\"delete_entry('{request.form['user']}','{i['course_name']}')\" >Delete</button><td></tr>"
         returned_table += "</tbody></table>"
         return returned_table
     except FileNotFoundError:
@@ -108,6 +112,12 @@ def create_download_file():
         filename = f'{username}.txt'
         abs_path = os.path.abspath("./static/download")
         return send_from_directory(abs_path, filename, as_attachment=True)  
+
+@app.route("/delete_entry", methods=["POST"])
+def delete_item():
+    req_list = request.data.decode("utf-8").split(",")
+    delete_entry(req_list[0],req_list[1])
+    return f'deleted {req_list[1]} for {req_list[0]}'
 
 
 if __name__ == "__main__":

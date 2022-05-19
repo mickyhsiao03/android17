@@ -9,8 +9,6 @@ def delete_entry(user_name, entry):
         index = 0
         for i in file_data:
             if i['course_name'] == entry:
-                print(entry)
-                print(index)
                 file_data.pop(index)
                 f.seek(0)
                 json.dump(file_data, f, indent=4)
@@ -18,7 +16,6 @@ def delete_entry(user_name, entry):
                 break
             else:
                 index += 1
-        print(file_data)
     return
 
 def calculate_GPA(user_name):

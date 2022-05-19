@@ -36,30 +36,6 @@
         "date": "05/14/22"
     },
     {
-        "course_name": "ACIT 2831",
-        "quiz": 0.0,
-        "lab": 20.0,
-        "assignments_projects": 27.0,
-        "presentations": 0.0,
-        "participation": 0.0,
-        "midterm": 25.0,
-        "final": 20.0,
-        "total": 92.0,
-        "date": "05/15/22"
-    },
-    {
-        "course_name": "ACIT 2811",
-        "quiz": 30.0,
-        "lab": 18.0,
-        "assignments_projects": 40.0,
-        "presentations": 0.0,
-        "participation": 0.0,
-        "midterm": 0.0,
-        "final": 8.0,
-        "total": 96.0,
-        "date": "05/15/22"
-    },
-    {
         "course_name": "ACIT 2911",
         "quiz": 15.0,
         "lab": 0.0,
@@ -105,18 +81,6 @@
         "midterm": 22.5,
         "final": 22.5,
         "total": 78.7,
-        "date": "05/17/22"
-    },
-    {
-        "course_name": "COMM 2216",
-        "quiz": 9.0,
-        "lab": 18.0,
-        "assignments_projects": 27.0,
-        "presentations": 0.0,
-        "participation": 0.0,
-        "midterm": 18.0,
-        "final": 18.0,
-        "total": 90.0,
         "date": "05/17/22"
     },
     {
