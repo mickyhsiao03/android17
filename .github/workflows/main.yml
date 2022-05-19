@@ -17,6 +17,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.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 }}
       
       - name: set up python version
         uses: actions/setup-python@v1
