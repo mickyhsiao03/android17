@@ -196,12 +196,17 @@ def test_multiple_stored_results(mock_file):
         "date": "05/12/22"
     }
 
+
     result = update_json_file("Nikola", date(2022, 5, 12),"ACIT 1420", 1, 1,1, 1, 1, 1, 1, 1)
+
     assert result[0] == updated_dict
     
 @patch("builtins.open", new_callable=mock_open, read_data=UPDATED_JSON)
 def test_update_existing_course(mock_file):    
+
     result = update_json_file("nikola", date(2022, 5, 12), "ACIT 1420", 1, 1, 1, 1, 1, 1, 1, 7)
+
+
     assert result[-1]["quiz"] == 1
     assert result[-1]["lab"] == 1
     assert result[-1]["assignments_projects"] == 1
@@ -212,11 +217,13 @@ def test_update_existing_course(mock_file):
     assert result[-1]["total"] == 7
     assert result[-1]["date"] == "05/12/22"
 
+
 @patch("builtins.open", new_callable=mock_open, read_data=GPA_JSON)
 def test_calculate_gpa(mock_file):
     assert calculate_GPA("test") == 46.125
 
     
+
 
 
 
