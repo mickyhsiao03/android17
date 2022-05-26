@@ -120,7 +120,7 @@
                 xhr = getXmlHttpRequestObject();
                 xhr.onreadystatechange = deleteCallback;
                 // asynchronous requests
-                xhr.open("POST", "http://localhost:6969/delete_entry", true);
+                xhr.open("POST", "/delete_entry", true);
                 // Send the request over the network
                 var formData = [user_name, course_name]
                 xhr.send(formData);
